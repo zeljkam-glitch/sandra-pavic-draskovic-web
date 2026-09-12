@@ -1,23 +1,43 @@
-import Link from "next/link";
+"use client";
 
-const options=[
- {id:"instrument",className:"specimen--one",number:"01",name:"Instrument Serif + Manrope",note:"Najmodernija kombinacija. Instrument Serif ima editorial karakter bez klasičnog, starinskog dojma. Manrope je čist i dovoljno topao za zdravstvene teme."},
- {id:"cormorant",className:"specimen--two",number:"02",name:"Cormorant Garamond + Inter",note:"Najizraženiji modni i časopisni smjer. Serif je elegantniji i dramatičniji. Ova kombinacija traži vrlo discipliniran layout i malo velikih izjava."},
- {id:"newsreader",className:"specimen--three",number:"03",name:"Newsreader + IBM Plex Sans",note:"Najmirnija i najozbiljnija kombinacija. Ima urednički autoritet, ali ostaje suvremena i čitljiva. Dobro podnosi duže zdravstvene tekstove."}
+import Image from "next/image";
+import Link from "next/link";
+import {useState} from "react";
+
+const fontPacks = [
+  {id:"fraunces", number:"01", name:"Fraunces + Inter", character:"Mekši, urbani editorial", note:"Najbliže osjećaju Kinsleyja bez korištenja licenciranog Mackinaca."},
+  {id:"gloock", number:"02", name:"Gloock + Inter", character:"Oštriji, modni editorial", note:"Najsofisticiranija opcija. Dobro pristaje Sandrinoj stylish strani."},
+  {id:"newsreader", number:"03", name:"Newsreader + Schibsted", character:"Miran stručni autoritet", note:"Najbolji balans za duže tekstove o zdravlju, bez kliničkog dojma."},
+  {id:"instrument", number:"04", name:"Instrument Serif + Cousine", character:"Suvremen i nekonvencionalan", note:"Najbliže jednom od ponuđenih Squarespace font paketa, ali je namjerno izražajniji."},
 ];
 
 export default function TypographyTest(){
- return <main className="type-test">
-  <nav className="type-test__nav" aria-label="Tipografske opcije"><strong>Tipografija za Sandru</strong><div>{options.map(o=><a key={o.id} href={"#"+o.id}>{o.number}</a>)}<Link href="/">Web</Link></div></nav>
-  <header className="type-intro"><h1>Isti sadržaj. Tri tipografska sustava.</h1><p>Gledaj oblik naslova, hrvatske znakove, čitljivost odlomka i odnos serifa sa sans serifom. Boja je ovdje sekundarna.</p></header>
-  {options.map(o=><section id={o.id} className={"specimen "+o.className} key={o.id}>
-   <div className="specimen__meta"><span>{o.number}</span><span>{o.name}</span></div>
-   <div className="specimen__grid">
-    <div><h2>Brini o zdravlju prije nego što moraš.</h2><p className="specimen__body">Sandra povezuje farmaceutsko znanje s prehranom, suplementima i biljkama. Pomaže ljudima razumjeti što im je važno i kako zdravije odluke uklopiti u svakodnevni život.</p><p className="specimen__byline">Sandra Pavić Drašković<span>mag. pharm. · fitoaromaterapeutkinja · edukatorica</span></p><span className="specimen__cta">Rezerviraj Health Review</span></div>
-    <blockquote>“Znanje vrijedi tek kada ga možeš primijeniti.”</blockquote>
-   </div>
-   <p className="specimen__chars">Č ć ž š đ · ABCDEFGHIJKLMNOPRSTUVZ · abcdefghijklmnoprstuvz · 0123456789</p>
-   <p className="specimen__note">{o.note}</p>
-  </section>)}
- </main>
+  const [active,setActive]=useState(fontPacks[0]);
+  return <main className={`font-lab font-lab--${active.id}`}>
+    <header className="font-lab__top"><strong>Tipografija za Sandru</strong><span>Odaberi font paket</span><Link href="/">Povratak na web</Link></header>
+    <div className="font-lab__layout">
+      <section className="font-lab__stage" aria-live="polite">
+        <div className="font-preview">
+          <header className="font-preview__nav"><strong>Sandra Pavić Drašković</strong><nav aria-label="Primjer navigacije"><span>O Sandri</span><span>Programi</span><span>Znanje</span></nav><span className="font-preview__nav-cta">Rezerviraj</span></header>
+          <div className="font-preview__hero">
+            <div className="font-preview__copy"><p className="font-preview__kicker">Prehrana · biljke · zdrave navike</p><h1>Brini o zdravlju prije nego što moraš.</h1><p>Sandra povezuje farmaceutsko znanje s prehranom, suplementima i biljkama. Bez brzih rješenja i nepotrebnog dramatiziranja.</p><span className="font-preview__button">Pronađi svoj sljedeći korak</span></div>
+            <figure><Image src="/images/sandra/sandra-hero.jpg" alt="Sandra Pavić Drašković" fill priority sizes="(max-width: 900px) 100vw, 38vw"/></figure>
+          </div>
+          <div className="font-preview__statement"><p>Zdravlje prije problema</p><h2>Ne moraš čekati dijagnozu da bi se počeo bolje brinuti o sebi.</h2></div>
+        </div>
+        <div className="font-lab__details"><span>{active.name}</span><span>Č ć Ž ž Š š Đ đ</span><span>0123456789</span></div>
+      </section>
+
+      <aside className="font-lab__panel" aria-label="Font paketi">
+        <div><p className="font-lab__eyebrow">Font packs</p><h2>Odaberi serif</h2><p>Svaka opcija mijenja naslov, body tekst, navigaciju i CTA. Gledaj cjelinu, ne samo jedno slovo.</p></div>
+        <div className="font-lab__options">
+          {fontPacks.map(option=><button key={option.id} type="button" onClick={()=>setActive(option)} aria-pressed={active.id===option.id} className={`font-option font-option--${option.id}`}>
+            <span className="font-option__number">{option.number}</span><span className="font-option__sample">Aa</span><span className="font-option__text"><strong>{option.name}</strong><small>{option.character}</small></span>
+          </button>)}
+        </div>
+        <p className="font-lab__note"><strong>{active.name}</strong><span>{active.note}</span></p>
+        <div className="font-lab__palette" aria-label="Predložena paleta"><span/><span/><span/><span/></div>
+      </aside>
+    </div>
+  </main>
 }
