@@ -12,7 +12,7 @@ export default function Home(){
         <p className="byline"><strong>Sandra Pavić Drašković</strong><span>mag. pharm. · fitoaromaterapeutkinja · edukatorica</span></p>
         <div className="actions"><Link className="button" href="/health-review">Rezerviraj Health Review</Link><ArrowLink href="/sandra">O Sandri</ArrowLink></div>
       </div>
-      <figure className="home-hero__image"><Image src="/editorial-produce.png" alt="Svježe povrće i voće u gradskoj kuhinji" fill priority sizes="(max-width: 760px) 100vw, 48vw"/></figure>
+      <figure className="home-hero__image"><Image src="/images/sandra/sandra-hero.jpg" alt="Sandra Pavić Drašković sjedi u svijetlom interijeru" fill priority sizes="(max-width: 760px) 100vw, 48vw"/></figure>
     </section>
 
     <section className="statement"><div className="measure"><p className="kicker">Zdravlje prije problema</p><h2>Ne moraš čekati dijagnozu da bi se počeo bolje brinuti o sebi.</h2><p>Većina ljudi o snu, prehrani, stresu i navikama ozbiljno razmišlja tek kada se pojavi problem. Sandra pomaže razlučiti što u moru savjeta ima smisla upravo za tebe.</p></div></section>
@@ -25,7 +25,12 @@ export default function Home(){
       </div>
     </section>
 
-    <section className="about-home"><div className="wrap about-home__grid"><div className="about-photo"><span>Sandrin portret</span><small>TODO_CONFIRM_WITH_SANDRA</small></div><div><p className="kicker">Sandra Pavić Drašković</p><h2>Struka joj je dala temelj. Život je promijenio perspektivu.</h2><p>Sandra je magistra farmacije, fitoaromaterapeutkinja i edukatorica. Vlastito iskustvo ozbiljne bolesti utjecalo je na njezin pogled na zdravlje, ali ga ne svodi na jednu dijagnozu.</p><p>Danas radi s ljudima koji žele razumjeti svoje odluke i uvesti promjene koje mogu zadržati.</p><ArrowLink href="/sandra">Pročitaj Sandrinu priču</ArrowLink></div></div></section>
+    <section className="speaking-home">
+      <figure><Image src="/images/sandra/sandra-speaking.jpg" alt="Sandra drži predavanje o lijekovima nakon kemoterapije" fill sizes="(max-width: 900px) 100vw, 58vw"/></figure>
+      <div><p className="kicker">Predavanja i radionice</p><h2>Stručno znanje koje ljudi mogu povezati sa svojim životom.</h2><p>Sandra govori o prehrani, suplementima, navikama i zdravstvenoj pismenosti. Sadržaj prilagođava publici i kontekstu događanja.</p><ArrowLink href="/predavanja">Teme i suradnja</ArrowLink></div>
+    </section>
+
+    <section className="about-home"><div className="wrap about-home__grid"><figure className="about-photo"><Image src="/images/sandra/sandra-portrait-square.jpeg" alt="Portret Sandre Pavić Drašković" fill sizes="(max-width: 900px) 100vw, 38vw"/></figure><div><p className="kicker">Sandra Pavić Drašković</p><h2>Struka joj je dala temelj. Život je promijenio perspektivu.</h2><p>Sandra je magistra farmacije, fitoaromaterapeutkinja i edukatorica. Vlastito iskustvo ozbiljne bolesti utjecalo je na njezin pogled na zdravlje, ali ga ne svodi na jednu dijagnozu.</p><p>Danas radi s ljudima koji žele razumjeti svoje odluke i uvesti promjene koje mogu zadržati.</p><ArrowLink href="/sandra">Pročitaj Sandrinu priču</ArrowLink></div></div></section>
 
     <section className="editorial-quote"><blockquote>“Dobar plan nije onaj kojeg se držiš tri tjedna. Dobar plan ima mjesto u tvom životu.”</blockquote><p>Sandra, predloženi tekst za brand</p></section>
 
