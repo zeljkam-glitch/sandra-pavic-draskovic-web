@@ -1,3 +1,12 @@
-import Link from "next/link";import {Header,Footer,ArrowLink} from "../site-components";
-const items=[["01","Prehrana u stvarnom životu","Praktičan vodič za svakodnevne odluke bez savršenih jelovnika."],["02","Suplementi bez nagađanja","Kako čitati kontekst, razlikovati oblike i postavljati bolja pitanja."],["03","Biljke s razlogom","Odabir i korištenje biljnih pripravaka bez pretpostavke da prirodno znači bezopasno."]];
-export default function Page(){return <><Header/><main className="shop"><section className="shop-hero"><div className="wrap"><p className="eyebrow">Sandrine knjižice</p><h1>Znanje koje ostaje pri ruci.</h1><p>Tematski vodiči za ljude koji žele razumjeti zdravlje i donositi manje nasumičnih odluka.</p></div></section><section className="shop-list wrap">{items.map(x=><article key={x[0]}><span>{x[0]} / VODIČ</span><div><h2>{x[1]}</h2><p>{x[2]}</p></div><div className="shop-meta"><p>Format i cijena</p><strong>TODO_CONFIRM_WITH_SANDRA</strong><Link className="button disabled-link" aria-disabled="true" href="#format">Uskoro u prodaji</Link></div></article>)}</section><section id="format" className="shop-format"><div className="wrap"><p className="eyebrow">Prije aktivacije prodaje</p><h2>PDF, tiskano ili oboje?</h2><p>Odabrani format određuje checkout, dostavu, automatsku isporuku i pravne uvjete. Prodajni gumbi ostaju namjerno neaktivni dok Sandra ne potvrdi format, cijene i sadržaj.</p><ArrowLink href="/">Vrati se na naslovnicu</ArrowLink><p className="todo">TODO_CONFIRM_WITH_SANDRA · stvarni naslovi, naslovnice, opisi, broj stranica, formati, cijene i način isporuke<br/>TODO_MEDICAL_CONTENT_REVIEW · zdravstveni sadržaj svih knjižica<br/>TODO_CONFIRM_LEGAL_DETAILS · prodajni uvjeti, privatnost, povrati i digitalni sadržaj</p></div></section></main><Footer/></>}
+import Link from "next/link";
+import {ArrowLink,Footer,Header} from "../site-components";
+
+export default function Page(){
+ return <><Header/><main className="shop">
+  <section className="shop-hero"><p className="kicker">Digitalne knjižice</p><h1>Za čitanje vlastitim tempom.</h1><p>Svaka knjižica obrađuje jednu temu. Nakon kupnje PDF stiže na email i ostaje ti za kasnije.</p></section>
+  <section className="shop-list wrap">
+   <article><span>U pripremi</span><div><h2>Sandrine knjižice uskoro dolaze ovdje.</h2><p>Nakon sastanka dodat ćemo stvarne naslove, naslovnice, opise, ogledne stranice i cijene.</p></div><div className="shop-meta"><strong>TODO_CONFIRM_WITH_SANDRA</strong><Link className="button disabled-link" aria-disabled="true" href="#priprema">Kupnja još nije aktivna</Link></div></article>
+  </section>
+  <section id="priprema" className="shop-format"><div className="wrap"><p className="kicker">Prije objave</p><h2>Što još trebamo od Sandre?</h2><p>Gotove PDF datoteke, podatke o autorstvu, cijene, nekoliko stranica za pregled i odluku o sustavu naplate. Zdravstveni sadržaj treba pregledati prije prodaje.</p><ArrowLink href="/">Povratak na naslovnicu</ArrowLink><p className="todo">TODO_MEDICAL_CONTENT_REVIEW<br/>TODO_CONFIRM_LEGAL_DETAILS</p></div></section>
+ </main><Footer/></>
+}
