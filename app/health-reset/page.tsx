@@ -1,1 +1,5 @@
-import {ContentPage} from "../content-page";export default function Page(){return <ContentPage eyebrow="Signature program" title="Health Reset" intro="Šest tjedana za sustav prehrane i navika koji možeš stvarno živjeti."><h2>Šest područja, jedan održiv sustav</h2><p>Prehrana, energija, san, kretanje, stres te suplementi i biljke promatraju se zajedno, bez ekstremnih protokola i obećanja brzih rezultata.</p><p><strong>6 tjedana · grupni program · 329 €</strong></p><p className="todo">TODO_CONFIRM_WITH_SANDRA · format, kurikulum, broj mjesta, datumi i lista čekanja<br/>TODO_MEDICAL_CONTENT_REVIEW · sav programski zdravstveni sadržaj</p></ContentPage>}
+import { redirect } from "next/navigation";
+
+export default function Page() {
+  redirect("/");
+}

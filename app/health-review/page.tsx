@@ -1,12 +1,5 @@
-import { Footer, Header } from "../site-components";
-import { IntakeForm } from "./intake-form";
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <><Header /><main className="consultation-page">
-    <section className="consultation-hero"><div><p className="kicker">Individualni rad</p><h1>Uvodno savjetovanje</h1><p>Temeljita procjena prehrane, dodataka prehrani, navika i ciljeva prije odluke o daljnjem individualnom radu.</p></div><aside><span>Trajanje</span><strong>najmanje 90 min</strong><span>Cijena</span><strong>200 €</strong><span>Način</span><strong>online ili Zagreb</strong></aside></section>
-    <section className="consultation-flow wrap"><div><p className="kicker">Prije termina</p><h2>Što uključuje proces</h2></div><ol><li><strong>Uvodni upit.</strong> Šalješ samo kontakt i temu zbog koje se javljaš.</li><li><strong>Dogovor i suglasnost.</strong> Ako je usluga prikladna, dobivaš informacije o opsegu, privatnosti, dokumentaciji i plaćanju.</li><li><strong>Proučavanje dokumentacije.</strong> Dokumente šalješ tek dogovorenim sigurnim putem i nakon dane suglasnosti.</li><li><strong>Savjetovanje.</strong> Razgovor traje najmanje 90 minuta, online ili uživo u Zagrebu.</li><li><strong>Procjena nastavka.</strong> Sandra predlaže kontrolni termin, individualni plan prehrane, suplementaciju ili drugi prikladan sljedeći korak.</li></ol></section>
-    <section className="topic-band"><div className="wrap"><p className="kicker">Moguće teme</p><div><span>Individualna prehrana</span><span>Sirova prehrana</span><span>Detox pristup</span><span>Suplementacija</span><span>Prehrana sportaša</span><span>Navike i svakodnevna organizacija</span></div></div></section>
-    <section className="consent-section wrap" id="suglasnost"><div><p className="kicker">Važno prije prijave</p><h2>Bez suglasnosti nema obrade dokumentacije.</h2></div><div><p>Obrazac u nastavku služi samo za prvi kontakt. Nemoj u njega unositi dijagnoze, nalaze, terapiju, OIB ni druge osjetljive podatke.</p><p>Slanjem upita pristaješ da te Sandra kontaktira radi procjene prikladnosti usluge i dogovora termina. Zasebna informirana suglasnost traži se prije zaprimanja ili proučavanja zdravstvene dokumentacije.</p><p className="legal-note">Savjetovanje ne postavlja dijagnozu, ne mijenja terapiju i ne zamjenjuje liječnički pregled. Ako imaš akutne simptome ili hitno stanje, obrati se liječniku ili hitnoj službi.</p></div></section>
-    <section className="inquiry-section" id="upit"><div className="wrap inquiry-grid"><div><p className="kicker">Prvi korak</p><h2>Zatraži uvodno savjetovanje.</h2><p>Ispuni samo osnovne podatke. Otvorit će se pripremljena poruka koju možeš pregledati prije slanja Sandri.</p></div><IntakeForm /></div></section>
-  </main><Footer /></>;
+  redirect("/savjetovanje");
 }
