@@ -27,9 +27,14 @@ export default function Home() {
       <div className="service-intro__copy"><p>Savjetovanje je namijenjeno odraslim osobama i sportašima koji žele sagledati prehranu, dodatke prehrani i svakodnevne navike u vlastitom kontekstu.</p><p>Teme mogu uključivati individualnu prehranu, sirovu prehranu, regenerativni pristup i detox. Uvodni termin je obavezan prije odluke o daljnjem individualnom radu.</p></div>
     </section>
 
+    <section className="school-home">
+      <figure><Image src="/images/sandra/sandra-melon.jpeg" alt="Sandra s posudom svježeg voća" fill sizes="(max-width: 900px) 100vw, 46vw" /></figure>
+      <div><p className="kicker">Online edukativni program</p><h2>Škola detoxa</h2><p className="school-home__lead">Ne mora svatko odmah primijeniti sve. Ali svatko može razumjeti kako detox izgleda u holističkom smislu.</p><p>Škola je osmišljena za učenje vlastitim tempom: od pripreme i tranzicije do detaljnih smjernica za prehranu, svakodnevne navike i cjelovit pristup detoksu.</p><div className="school-home__facts"><span>Vlastiti tempo</span><span>Detaljne smjernice</span><span>Znanje za dugoročno</span></div><ArrowLink href="/skola-detoxa">Upoznaj Školu detoxa</ArrowLink></div>
+    </section>
+
     <section className="process-section" id="kako-radimo"><div className="wrap"><header><p className="kicker">Kako radimo</p><h2>Od prvog javljanja do jasne preporuke.</h2></header><div className="process-grid">{steps.map(([n, title, text]) => <article key={n}><span>{n}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 
-    <section className="pathways wrap"><header><p className="kicker">Područja rada</p><h2>Različite potrebe. Jednako temeljit početak.</h2></header><div className="pathway-grid">
+    <section className="pathways wrap"><header><p className="kicker">Ostali oblici rada</p><h2>Različite potrebe. Jednako temeljit pristup.</h2></header><div className="pathway-grid">
       <article><span>Individualno</span><h3>Prehrana i suplementacija</h3><p>Pregled ciljeva, navika i postojeće dokumentacije prije odluke treba li ti individualni plan ili kontrolno savjetovanje.</p><ArrowLink href="/savjetovanje">Detalji i cijena</ArrowLink></article>
       <article><span>Sportaši</span><h3>Prehrana u ritmu treninga</h3><p>Individualna procjena prehrane i suplementacije u odnosu na opterećenje, oporavak, ciljeve i svakodnevni raspored.</p><ArrowLink href="/savjetovanje#upit">Pošalji upit</ArrowLink></article>
       <article><span>Tvrtke i udruge</span><h3>Edukativna predavanja</h3><p>Predavanja i radionice za grupe. Ne uključuju osobnu zdravstvenu procjenu pa individualna suglasnost nije potrebna.</p><ArrowLink href="/predavanja">Teme i suradnja</ArrowLink></article>
