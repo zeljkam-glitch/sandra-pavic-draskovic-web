@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Sandra Pavić Drašković | Zdravlje koje možeš živjeti",
-  description: "Farmaceutsko znanje, prehrana, suplementi, biljke i održive svakodnevne navike.",
+  description: "Individualno savjetovanje o prehrani, suplementima i navikama te edukativna predavanja za tvrtke i udruge.",
   other: {
     "codex-preview": "sandra-editorial-health",
   },

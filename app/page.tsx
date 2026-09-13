@@ -1,43 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
-import {ArrowLink, Footer, Header} from "./site-components";
+import { ArrowLink, Footer, Header } from "./site-components";
 
-export default function Home(){
-  return <><Header/><main>
-    <section className="home-hero">
+const steps = [
+  ["01", "Kratki upit", "Javljaš se kroz obrazac i biraš temu. U ovoj fazi ne šalješ osjetljivu medicinsku dokumentaciju."],
+  ["02", "Dokumenti i suglasnost", "Ako je savjetovanje prikladno, dobivaš upute za sigurnu dostavu dokumentacije i obaveznu informiranu suglasnost."],
+  ["03", "Uvodno savjetovanje", "Najmanje 90 minuta, online ili uživo u Zagrebu. Prije termina Sandra proučava dostavljene informacije."],
+  ["04", "Procjena i sljedeći korak", "Nakon razgovora dobivaš preporuku: završetak procesa, kontrolno savjetovanje ili prijedlog individualnog plana prehrane i suplementacije."],
+];
+
+export default function Home() {
+  return <><Header /><main>
+    <section className="home-hero home-hero--service">
       <div className="home-hero__copy">
-        <p className="kicker">Prehrana, biljke i svakodnevne navike</p>
-        <h1>Brini o zdravlju prije nego što moraš.</h1>
-        <p className="intro">Sandra povezuje farmaceutsko znanje s prehranom, suplementima i biljkama. Jasno objašnjava što je važno, što može pričekati i kako promjene uklopiti u stvaran život.</p>
-        <p className="byline"><strong>Sandra Pavić Drašković</strong><span>mag. pharm. · fitoaromaterapeutkinja · edukatorica</span></p>
-        <div className="actions"><Link className="button" href="/health-review">Rezerviraj Health Review</Link><ArrowLink href="/sandra">O Sandri</ArrowLink></div>
+        <p className="kicker">Natura Sanat · individualno savjetovanje</p>
+        <h1>Prvo razumijemo cijelu sliku.</h1>
+        <p className="intro">Stručno vođeno savjetovanje o prehrani, suplementima i navikama za ljude koji žele jasan, izvediv sljedeći korak — bez gotovih rješenja prije razgovora.</p>
+        <div className="hero-facts" aria-label="Osnovne informacije"><span><strong>90+ min</strong> trajanje</span><span><strong>200 €</strong> uvodno savjetovanje</span><span><strong>Online / Zagreb</strong> način održavanja</span></div>
+        <div className="actions"><Link className="button" href="/health-review#upit">Zatraži uvodno savjetovanje</Link><ArrowLink href="#kako-radimo">Kako izgleda proces</ArrowLink></div>
       </div>
-      <figure className="home-hero__image"><Image src="/images/sandra/sandra-hero.jpg" alt="Sandra Pavić Drašković sjedi u svijetlom interijeru" fill priority sizes="(max-width: 760px) 100vw, 48vw"/></figure>
+      <figure className="home-hero__image"><Image src="/images/sandra/sandra-hero.jpg" alt="Sandra Pavić Drašković" fill priority sizes="(max-width: 760px) 100vw, 48vw" /></figure>
     </section>
 
-    <section className="statement"><div className="measure"><p className="kicker">Zdravlje prije problema</p><h2>Ne moraš čekati dijagnozu da bi se počeo bolje brinuti o sebi.</h2><p>Većina ljudi o snu, prehrani, stresu i navikama ozbiljno razmišlja tek kada se pojavi problem. Sandra pomaže razlučiti što u moru savjeta ima smisla upravo za tebe.</p></div></section>
-
-    <section className="offer wrap" id="rad"><header><p className="kicker">Rad sa Sandrom</p><h2>Odaberi podršku koja ti sada treba.</h2></header>
-      <div className="offer-list">
-        <article><div><p>Individualno</p><h3>Health Review</h3></div><p>Devedeset minuta za pregled navika, pitanja i prioriteta.</p><strong>120 €</strong><ArrowLink href="/health-review">Saznaj više</ArrowLink></article>
-        <article><div><p>Grupni program</p><h3>Health Reset</h3></div><p>Šest tjedana za održiviji odnos prema prehrani i zdravlju.</p><strong>329 €</strong><ArrowLink href="/health-reset">O programu</ArrowLink></article>
-        <article><div><p>Za tvrtke i organizacije</p><h3>Predavanja</h3></div><p>Stručno, razumljivo i korisno i nakon izlaska iz dvorane.</p><strong>od 450 €</strong><ArrowLink href="/predavanja">Teme i suradnja</ArrowLink></article>
-      </div>
+    <section className="service-intro wrap" id="pocni">
+      <div><p className="kicker">Za koga je savjetovanje</p><h2>Individualan pristup počinje procjenom, ne planom.</h2></div>
+      <div className="service-intro__copy"><p>Savjetovanje je namijenjeno odraslim osobama i sportašima koji žele sagledati prehranu, dodatke prehrani i svakodnevne navike u vlastitom kontekstu.</p><p>Teme mogu uključivati individualnu prehranu, sirovu prehranu, regenerativni pristup i detox. Uvodni termin je obavezan prije odluke o daljnjem individualnom radu.</p></div>
     </section>
 
-    <section className="speaking-home">
-      <figure><Image src="/images/sandra/sandra-speaking.jpg" alt="Sandra drži predavanje o lijekovima nakon kemoterapije" fill sizes="(max-width: 900px) 100vw, 58vw"/></figure>
-      <div><p className="kicker">Predavanja i radionice</p><h2>Stručno znanje koje ljudi mogu povezati sa svojim životom.</h2><p>Sandra govori o prehrani, suplementima, navikama i zdravstvenoj pismenosti. Sadržaj prilagođava publici i kontekstu događanja.</p><ArrowLink href="/predavanja">Teme i suradnja</ArrowLink></div>
-    </section>
+    <section className="process-section" id="kako-radimo"><div className="wrap"><header><p className="kicker">Kako radimo</p><h2>Od prvog javljanja do jasne preporuke.</h2></header><div className="process-grid">{steps.map(([n, title, text]) => <article key={n}><span>{n}</span><h3>{title}</h3><p>{text}</p></article>)}</div></div></section>
 
-    <section className="about-home"><div className="wrap about-home__grid"><figure className="about-photo"><Image src="/images/sandra/sandra-portrait-square.jpeg" alt="Portret Sandre Pavić Drašković" fill sizes="(max-width: 900px) 100vw, 38vw"/></figure><div><p className="kicker">Sandra Pavić Drašković</p><h2>Struka joj je dala temelj. Život je promijenio perspektivu.</h2><p>Sandra je magistra farmacije, fitoaromaterapeutkinja i edukatorica. Vlastito iskustvo ozbiljne bolesti utjecalo je na njezin pogled na zdravlje, ali ga ne svodi na jednu dijagnozu.</p><p>Danas radi s ljudima koji žele razumjeti svoje odluke i uvesti promjene koje mogu zadržati.</p><ArrowLink href="/sandra">Pročitaj Sandrinu priču</ArrowLink></div></div></section>
+    <section className="pathways wrap"><header><p className="kicker">Područja rada</p><h2>Različite potrebe. Jednako temeljit početak.</h2></header><div className="pathway-grid">
+      <article><span>Individualno</span><h3>Prehrana i suplementacija</h3><p>Pregled ciljeva, navika i postojeće dokumentacije prije odluke treba li ti individualni plan ili kontrolno savjetovanje.</p><ArrowLink href="/health-review">Detalji i cijena</ArrowLink></article>
+      <article><span>Sportaši</span><h3>Prehrana u ritmu treninga</h3><p>Individualna procjena prehrane i suplementacije u odnosu na opterećenje, oporavak, ciljeve i svakodnevni raspored.</p><ArrowLink href="/health-review#upit">Pošalji upit</ArrowLink></article>
+      <article><span>Tvrtke i udruge</span><h3>Edukativna predavanja</h3><p>Predavanja i radionice za grupe. Ne uključuju osobnu zdravstvenu procjenu pa individualna suglasnost nije potrebna.</p><ArrowLink href="/predavanja">Teme i suradnja</ArrowLink></article>
+      <article><span>Mediji</span><h3>Gostovanja i stručni doprinos</h3><p>Razgovori, intervjui i edukativni sadržaji o prehrani, biljkama, suplementima i zdravstvenoj pismenosti.</p><a className="arrow-link" href="mailto:pavic.sandra@yahoo.com?subject=Medijski%20upit%20za%20Sandru%20Pavi%C4%87%20Dra%C5%A1kovi%C4%87">Pošalji medijski upit <span aria-hidden>→</span></a></article>
+    </div></section>
 
-    <section className="editorial-quote"><blockquote>“Dobar plan nije onaj kojeg se držiš tri tjedna. Dobar plan ima mjesto u tvom životu.”</blockquote><p>Sandra, predloženi tekst za brand</p></section>
+    <section className="decision-section"><div className="wrap decision-grid"><div><p className="kicker">Uvodno savjetovanje</p><h2>90 minuta za procjenu što dalje.</h2><p>Prije termina Sandra proučava dogovorene informacije i dokumente. Na savjetovanju zajedno prolazite prioritete, očekivanja i mogućnosti. Individualni plan prehrane ili suplementacije nije automatski uključen — predlaže se samo ako procjena pokaže da je to smislen sljedeći korak.</p></div><aside><span>Cijena</span><strong>200 €</strong><p>Online ili uživo u Zagrebu. Plaćanje se obavlja nakon potvrde termina, a prije savjetovanja.</p><Link className="button" href="/health-review#upit">Zatraži termin</Link></aside></div></section>
 
-    <section className="book-home"><div className="wrap book-home__grid"><div><p className="kicker">Digitalne knjižice</p><h2>Pročitaj. Razumij. Primijeni.</h2></div><div><p>Sandrine knjižice obrađuju jednu temu od početka do kraja. Možeš ih preuzeti odmah nakon kupnje i vratiti im se kad zatreba.</p><p className="pending">Naslovi, naslovnice i cijene bit će dodani nakon potvrde sa Sandrom.</p><ArrowLink href="/knjizice">Pogledaj knjižice</ArrowLink></div></div></section>
+    <section className="safety-section wrap"><div><p className="kicker">Jasne granice</p><h2>Suglasnost i privatnost nisu sitna slova.</h2></div><div><p>Prije obrade zdravstvenih informacija potrebna je informirana suglasnost. Bez nje individualno savjetovanje i pregled dokumentacije ne mogu započeti.</p><p>Savjetovanje nije dijagnostika, liječnički pregled ni zamjena za propisanu terapiju. Za hitna stanja i medicinske odluke potrebno je obratiti se liječniku.</p><ArrowLink href="/health-review#suglasnost">Pročitaj prije slanja upita</ArrowLink></div></section>
 
-    <section className="notes wrap"><header><p className="kicker">Sandra objašnjava</p><h2>Manje buke. Više konteksta.</h2></header><div className="notes-list"><Link href="/znanje"><span>Prehrana</span><h3>Trebaš li stvarno detox?</h3></Link><Link href="/znanje"><span>Suplementi</span><h3>Magnezij nije samo magnezij.</h3></Link><Link href="/znanje"><span>Prevencija</span><h3>Promjena ne mora početi bolešću.</h3></Link></div></section>
-
-    <section className="newsletter"><div className="newsletter__inner"><div><p className="kicker">Bilješke o zdravlju</p><h2>Jedno korisno pismo, dva puta mjesečno.</h2><p>Sandra u svakom izdanju uzima jednu temu i objašnjava je bez dramatiziranja.</p></div><form><label htmlFor="email">Email adresa</label><input id="email" type="email" placeholder="ime@email.com"/><button type="button">Prijavi se</button><small>TODO_CONFIRM_WITH_SANDRA: povezati newsletter</small></form></div></section>
-  </main><Footer/></>
+    <section className="about-home"><div className="wrap about-home__grid"><figure className="about-photo"><Image src="/images/sandra/sandra-portrait-square.jpeg" alt="Portret Sandre Pavić Drašković" fill sizes="(max-width: 900px) 100vw, 38vw" /></figure><div><p className="kicker">Sandra Pavić Drašković</p><h2>Farmaceutsko znanje i iskustvo koje vidi osobu, ne samo popis navika.</h2><p>Sandra je magistra farmacije, fitoaromaterapeutkinja, savjetnica za zdravu prehranu i edukatorica. Kroz Natura Sanat radi individualno, održava predavanja i radionice te približava stručne teme ljudima koji žele donositi informiranije odluke.</p><ArrowLink href="/sandra">Upoznaj Sandru</ArrowLink></div></div></section>
+  </main><Footer /></>;
 }
