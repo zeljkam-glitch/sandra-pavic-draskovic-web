@@ -28,6 +28,6 @@ const coverage = [
 ];
 
 export default function Page(){return <><Header/><main>
-  <section className="page-hero yellow"><div><p className="kicker">Sandra u medijima</p><h1>Gostovanja, predavanja i objave.</h1><p className="lede">Odabrane vanjske poveznice o Sandrinim edukativnim aktivnostima.</p></div></section>
+  <section className="page-hero yellow"><div><p className="kicker">Sandra u medijima</p><h1>Razgovori koji su izašli izvan četiri zida.</h1><p className="lede">Radio, javna predavanja i događanja na kojima je Sandra otvarala pitanja o prehrani, navikama i zdravlju.</p></div></section>
   <section className="glossary wrap"><div className="term-list">{coverage.map(item=><a key={item.href} href={item.href} target="_blank" rel="noreferrer"><span>{item.outlet} · {item.date}</span><strong>{item.title}</strong><b aria-hidden>↗</b></a>)}</div><p className="fine">Sadržaj i naslovi na povezanim stranicama odgovornost su njihovih izdavača.</p></section>
 </main><Footer/></>}

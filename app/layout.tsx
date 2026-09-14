@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./homepage.css";
 
 export const metadata: Metadata = {
   title: "Sandra Drašković | Edukacija o prehrani i zdravlju",
