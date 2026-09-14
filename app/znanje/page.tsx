@@ -1,2 +1,3 @@
-import { redirect } from "next/navigation";
-export default function Page(){redirect("/skola-detoxa")}
+import Link from "next/link";
+import {Footer,Header} from "../site-components";
+export default function Page(){return <><Header/><main><section className="page-hero yellow"><div><p className="kicker">Znanje</p><h1>Članci koji objašnjavaju, ne obećavaju.</h1><p className="lede">Ovdje će se objavljivati stručno pregledani edukativni tekstovi o prehrani, dodacima prehrani, biljkama, snu, stresu, prevenciji i zdravstvenoj pismenosti.</p></div></section><section className="empty-state wrap"><h2>Prvi članci su u pripremi.</h2><p>Medicinski sadržaj neće biti objavljen kao činjenica bez stručne provjere.</p><Link className="arrow-link" href="/pojmovnik">Otvori pojmovnik <span aria-hidden>→</span></Link><span className="todo">TODO_MEDICAL_CONTENT_REVIEW</span></section></main><Footer/></>}

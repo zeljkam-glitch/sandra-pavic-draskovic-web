@@ -1,0 +1,7 @@
+import Link from "next/link";
+import {notFound} from "next/navigation";
+import {Footer,Header} from "../../site-components";
+import {glossaryTerms} from "../data";
+
+export function generateStaticParams(){return glossaryTerms.map(t=>({slug:t.slug}));}
+export default async function Page({params}:{params:Promise<{slug:string}>}){const{slug}=await params;const term=glossaryTerms.find(t=>t.slug===slug);if(!term)notFound();const related=term.related.map(s=>glossaryTerms.find(t=>t.slug===s)).filter(Boolean);return <><Header/><main><section className="page-hero yellow"><div><p className="kicker">{term.category}</p><h1>{term.title}</h1><p className="lede">Definicija još nije objavljena jer čeka stručnu provjeru.</p></div></section><section className="term-detail wrap"><div><h2>Stručni sadržaj u pripremi</h2><p>Ovdje će biti provjerena definicija, kontekst primjene i važne sigurnosne napomene.</p><span className="todo">TODO_MEDICAL_CONTENT_REVIEW</span></div><aside><strong>Datum stručne provjere</strong><p>Nije još provedena</p><strong>Povezani pojmovi</strong>{related.length?related.map(t=><Link key={t!.slug} href={"/pojmovnik/"+t!.slug}>{t!.title}</Link>):<p>Nema povezanih pojmova.</p>}<strong>Povezani članci</strong><p>Još nisu povezani.</p><strong>Povezane knjižice</strong><p>Još nisu povezane.</p></aside></section></main><Footer/></>}

@@ -1,0 +1,3 @@
+import Link from "next/link";
+import {Footer,Header} from "../site-components";
+export default function Page(){return <><Header/><main><section className="page-hero yellow"><div><p className="kicker">English version</p><h1>Professional review in progress.</h1><p className="lede">The English structure is ready, but health-related content will not be machine-translated and published without professional review.</p><div className="todo-stack"><span>TODO_ENGLISH_CONTENT_REVIEW</span><span>TODO_MEDICAL_TRANSLATION_REVIEW</span></div><Link className="arrow-link" href="/">Hrvatska verzija <span aria-hidden>→</span></Link></div></section></main><Footer/></>}

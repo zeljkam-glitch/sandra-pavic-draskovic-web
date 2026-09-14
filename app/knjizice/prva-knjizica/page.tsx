@@ -1,0 +1,7 @@
+import Image from "next/image";
+import {Footer,Header} from "../../site-components";
+
+export default function Page(){return <><Header/><main>
+<section className="product wrap"><figure><Image src="/editorial-produce.png" alt="Privremena naslovna fotografija digitalne knjižice u pripremi" fill priority sizes="(max-width: 800px) 100vw, 42vw"/></figure><div><p className="kicker">Digitalna knjižica · u pripremi</p><h1>Prva digitalna knjižica</h1><p>Ovo je pripremljena stranica proizvoda. Naslov, opis, sadržaj, broj stranica, pregled stranica i cijena nisu izmišljeni prije Sandrine potvrde.</p><dl><div><dt>Sadržaj</dt><dd>Čeka potvrdu</dd></div><div><dt>Broj stranica</dt><dd>Čeka potvrdu</dd></div><div><dt>Cijena</dt><dd>Čeka potvrdu</dd></div><div><dt>Format</dt><dd>Digitalni PDF</dd></div></dl><button className="button" disabled aria-disabled="true">Kupi knjižicu</button><p className="fine">Kupnja još nije aktivna. Ne postoji lažni checkout.</p></div></section>
+<section className="delivery"><div className="wrap"><p className="kicker">Što kupac dobiva</p><h2>PDF i automatsku dostavu nakon uspješnog plaćanja.</h2><p>Proces će biti aktiviran tek nakon odabira pružatelja plaćanja, potvrde izdavanja računa i konfiguracije sigurne automatske dostave.</p><div className="todo-stack"><span>TODO_CONFIRM_BOOKLET_PRICE</span><span>TODO_SELECT_PAYMENT_PROVIDER</span><span>TODO_CONFIGURE_AUTOMATIC_DELIVERY</span><span>TODO_CONFIRM_INVOICE_PROCESS</span><span>TODO_CONFIRM_FACEBOOK_GROUP_ACCESS</span></div></div></section>
+</main><Footer/></>}

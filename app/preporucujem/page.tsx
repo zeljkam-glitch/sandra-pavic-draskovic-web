@@ -1,0 +1,7 @@
+import {Footer,Header} from "../site-components";
+const products=[
+["Omega-3 tekući veganski Superior","https://biogena.com/hr-hr/proizvodi/omega-3-tekuci-veganski-superior-49"],
+["Spirulina 400 mg","https://biogena.com/hr-hr/proizvodi/spirulina-400-mg-79"],
+["Bio Moringa 500","https://biogena.com/hr-hr/proizvodi/bio-moringa-500-250"],
+];
+export default function Page(){return <><Header/><main><section className="page-hero green"><div><p className="kicker">Preporučujem</p><h1>Proizvodi za daljnje informiranje.</h1><p className="lede">Navedene poveznice trenutačno su obične poveznice na stranice proizvođača. Nisu označene kao potvrđeni affiliate linkovi.</p></div></section><section className="recommend wrap"><div className="affiliate-note"><strong>Transparentna napomena</strong><p>Ova stranica može sadržavati partnerske poveznice. Ako kupite proizvod putem označene poveznice, Sandra može ostvariti proviziju. Cijena za vas ostaje ista.</p></div><div className="recommend-list">{products.map(([name,href],i)=><article key={href}><span>0{i+1}</span><h2>{name}</h2><p>Prije odluke provjerite deklaraciju i razgovarajte s liječnikom ili ljekarnikom ako uzimate terapiju, imate dijagnozu, trudni ste ili dojite.</p><a className="arrow-link" href={href} target="_blank" rel="noreferrer">Pogledaj na BIOGENA <span aria-hidden>↗</span></a></article>)}</div><div className="todo-stack"><span>TODO_REPLACE_WITH_VERIFIED_AFFILIATE_LINKS</span><span>TODO_CONFIRM_PRODUCT_IMAGE_RIGHTS</span></div></section></main><Footer/></>}
