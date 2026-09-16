@@ -1,7 +1,2 @@
-import Image from "next/image";
-import {Footer,Header} from "../../site-components";
-
-export default function Page(){return <><Header/><main>
-<section className="product wrap"><figure><Image src="/images/sandra/sandra-booklet-detail-v1.webp" alt="Sandra priprema svježe povrće na kuhinjskoj dasci" fill priority sizes="(max-width: 800px) 100vw, 42vw"/></figure><div><p className="kicker">Digitalna knjižica · u pripremi</p><h1>Ne objavljujemo praznu naslovnicu.</h1><p>Ovdje će stajati prva Sandrina knjižica kad naslov, sadržaj i svaka praktična uputa budu spremni. Do tada ne izmišljamo proizvod koji još ne postoji.</p><dl><div><dt>Sadržaj</dt><dd>Čeka potvrdu</dd></div><div><dt>Broj stranica</dt><dd>Čeka potvrdu</dd></div><div><dt>Cijena</dt><dd>Čeka potvrdu</dd></div><div><dt>Format</dt><dd>Digitalni PDF</dd></div></dl><button className="button" disabled aria-disabled="true">Kupi knjižicu</button><p className="fine">Kupnja će biti dostupna kad plaćanje, račun i dostava budu postavljeni kako treba.</p></div></section>
-<section className="delivery"><div className="wrap"><p className="kicker">Nakon kupnje</p><h2>Bez čekanja na ručno slanje.</h2><p>Kad prodaja bude aktivna, knjižica će nakon uspješne uplate automatski stići na email kupca.</p>{/* TODO_CONFIRM_BOOKLET_PRICE */}{/* TODO_SELECT_PAYMENT_PROVIDER */}{/* TODO_CONFIGURE_AUTOMATIC_DELIVERY */}{/* TODO_CONFIRM_INVOICE_PROCESS */}{/* TODO_CONFIRM_FACEBOOK_GROUP_ACCESS */}</div></section>
-</main><Footer/></>}
+import {redirect} from "next/navigation";
+export default function Page(){redirect("/knjizice");}

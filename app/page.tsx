@@ -2,14 +2,14 @@ import Image from "next/image";
 import {ArrowLink, Footer, Header} from "./site-components";
 
 const services = [
-  {n:"01", eyebrow:"Kad želiš razgovor jedan na jedan", title:"Individualne konzultacije", text:"Ako imaš punu glavu savjeta, a i dalje ne znaš odakle krenuti, ovdje zajedno gledamo cijelu sliku. Bez osude i bez popisa nemogućih pravila.", meta:"90 min · 200 €", detail:"Upitnik prije susreta · razgovor · pisane smjernice", href:"/savjetovanje", cta:"Pogledaj kako izgleda"},
+  {n:"01", eyebrow:"Kad želiš razgovor jedan na jedan", title:"Individualne konzultacije", text:"Ako imaš punu glavu savjeta, a i dalje ne znaš odakle krenuti, ovdje zajedno gledamo cijelu sliku. Bez osude i bez popisa nemogućih pravila.", meta:"Prema odabranom programu", detail:"Upitnik prije susreta · razgovor · pisane smjernice", href:"/savjetovanje", cta:"Pogledaj kako izgleda"},
   {n:"02", eyebrow:"Kad znanje treba doći do ljudi", title:"Predavanja i radionice", text:"Za udruge, tvrtke i zajednice koje ne žele još jedno predavanje puno pojmova, nego temu o kojoj će publika nastaviti razgovarati.", meta:"60 ili 90 min", detail:"Predavanje · pitanja publike · mogući praktični dio", href:"/predavanja", cta:"Pogledaj formate"},
-  {n:"03", eyebrow:"Kad želiš učiti svojim tempom", title:"Digitalne knjižice", text:"Materijali koje ne moraš pročitati u jednom dahu. Otvori ih kad ti zatrebaju, podcrtaj važno i kreni od jedne promjene.", meta:"U pripremi", detail:"Jasna tema · praktične upute · materijal za preuzimanje", href:"/knjizice", cta:"Otvori knjižice"},
+  {n:"03", eyebrow:"Kad želiš učiti svojim tempom", title:"Digitalne knjižice", text:"Materijali koje ne moraš pročitati u jednom dahu. Otvori ih kad ti zatrebaju, podcrtaj važno i kreni od jedne promjene.", meta:"U pripremi", detail:"Jasna tema · praktične upute · najava izdanja", href:"/knjizice", cta:"Otvori knjižice"},
 ];
 
 const collaborations = [
-  {name:"Udruga Budi dobro", logo:"/logos/budi-dobro.jpg", logoClass:"logo-budi", text:"Sandra je nutricionistica udruge i vodi Smoothionice. Hrana se ondje ne svodi na teoriju: priprema se, kuša i o njoj se razgovara.", href:"https://budidobro.hr/"},
-  {name:"Institut za gastroenterološke tumore (IGET)", logo:"/logos/iget.png", logoClass:"logo-iget", text:"Na mjesečnim predavanjima Sandra otvara teme koje često ostanu između pregleda, internetske pretrage i pitanja koje se nismo sjetili postaviti.", href:"https://iget.hr/"},
+  {name:"Udruga Budi dobro", logo:"/logos/budi-dobro.jpg", logoClass:"logo-budi", text:"Besplatne radionice prehrane u programima podrške onkološkim bolesnicima. Priprema i kušanje obroka dio su zajedničkog učenja.", href:"https://budidobro.hr/"},
+  {name:"Institut za gastroenterološke tumore (IGET)", logo:"/logos/iget.png", logoClass:"logo-iget", text:"Radionice zdrave hrane u suradnji s Institutom za gastroenterološke tumore, namijenjene onkološkim bolesnicima.", href:"https://iget.hr/"},
   {name:"Preživjela. Što sada?", logo:"/logos/prezivjela.png", logoClass:"logo-prezivjela", text:"Suradnja na sadržajima za život nakon liječenja. Jer oporavak ne završava izlaskom iz bolnice, a dobra informacija ponekad mijenja cijeli dan.", href:"https://www.prezivjela.com/"},
 ];
 
@@ -29,7 +29,6 @@ export default function Home() {
       <figure className="hero-photo"><Image src="/images/sandra/sandra-hero.jpg" alt="Sandra Drašković u zelenom odijelu, naslonjena uz prozor" fill priority sizes="(max-width: 800px) 100vw, 48vw"/></figure>
     </section>
 
-    <section className="freebie-band"><div className="wrap freebie-grid"><div><p className="kicker">Besplatni vodič i newsletter</p><h2>Jedna važna tema. Cijela priča.</h2></div><div><p>Prvi vodič stiže uskoro. Bit će napravljen da ga spremiš, podcrtaš i otvoriš kad ti zatreba — uz povremena pisma koja ne hrane paniku, nego razumijevanje.</p>{/* TODO_CONFIRM_FREEBIE_TOPIC */}{/* TODO_SELECT_NEWSLETTER_PROVIDER */}</div></div></section>
 
     <section className="problem"><div className="wrap problem-grid">
       <div><p className="kicker">Previše savjeta. Premalo konteksta.</p><h2>Internet zna što bi svi trebali. Ne zna kako živiš ti.</h2></div>
@@ -76,7 +75,7 @@ export default function Home() {
 
     <section className="content-system"><div className="wrap content-grid">
       <div><p className="kicker">Znanje kojem se možeš vratiti</p><h2>Dobra informacija ne bi trebala nestati u feedu.</h2></div>
-      <div><p>Zato će jedna važna tema dobiti prostor koji joj treba: cijelo objašnjenje na blogu, kratki podsjetnik u newsletteru i vodič koji možeš spremiti. Bez lova na ostatak priče u deset objava.</p><div className="content-links"><ArrowLink href="/znanje">Čitaj blog</ArrowLink><ArrowLink href="/pojmovnik">Otvori pojmovnik</ArrowLink><span>Newsletter i prvi PDF vodič uskoro</span></div></div>
+      <div><p>Na blogu obrađujemo pitanja iz savjetovanja, a u pojmovniku objašnjavamo izraze na koje nailaziš u tekstovima o prehrani i dodacima. Svaki tekst ima izvore i jasno navedene granice primjene.</p><div className="content-links"><ArrowLink href="/znanje">Čitaj blog</ArrowLink><ArrowLink href="/pojmovnik">Otvori pojmovnik</ArrowLink><span>Newsletter i prvi PDF vodič uskoro</span></div></div>
     </div></section>
 
     <section className="faq wrap"><p className="kicker">Prije nego pošalješ upit</p><h2>Pitanja koja je dobro razjasniti odmah.</h2><div className="faq-list">{faqs.map(([question, answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></section>

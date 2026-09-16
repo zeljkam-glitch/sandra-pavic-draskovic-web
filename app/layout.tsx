@@ -5,6 +5,7 @@ import "./homepage.css";
 export const metadata: Metadata = {
   title: "Sandra Drašković | Edukacija o prehrani i zdravlju",
   description: "Individualne konzultacije, predavanja, radionice i edukativni sadržaji Sandre Drašković.",
+  robots: { index: false, follow: false },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
