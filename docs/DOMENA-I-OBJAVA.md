@@ -3,7 +3,7 @@
 ## Trenutačno stanje
 
 - Vercel projekt: `sandra-pavic-draskovic-web`
-- Domena `naturasanat.hr` i poddomena `www.naturasanat.hr` dodane su projektu i vlasništvo je potvrđeno.
+- Domena `sandrapavicdraskovic.com` i poddomena `www.sandrapavicdraskovic.com` dodaju se projektu nakon potvrde DNS zapisa.
 - DNS još koristi MyDataKnox nameservere: `ns1.mydataknox.com` i `ns2.mydataknox.com`.
 - Stari A zapis vodi na `185.62.75.97`, a postojeći web vraća HTTP 503.
 - Nova verzija nije preuzela javni promet. Objavljena je samo kao Vercel preview.

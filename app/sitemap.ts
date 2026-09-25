@@ -1,6 +1,6 @@
 import type {MetadataRoute} from "next";
 
-const baseUrl = "https://www.naturasanat.hr";
+const baseUrl = "https://www.sandrapavicdraskovic.com";
 const routes = ["", "/sandra", "/savjetovanje", "/individualni-rad", "/predavanja", "/snimke-radionica", "/webshop", "/digitalni-alati", "/pojmovnik", "/znanje", "/preporucujem", "/mediji", "/kontakt", "/privatnost", "/kolacici", "/uvjeti-kupnje", "/prigovori-i-povrati", "/dokumenti", "/cjenici"];
 
 export default function sitemap():MetadataRoute.Sitemap {

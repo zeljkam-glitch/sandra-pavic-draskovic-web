@@ -5,7 +5,7 @@ import {CookieConsent} from "./cookie-consent";
 import {SeoStructuredData} from "./seo-structured-data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.naturasanat.hr"),
+  metadataBase: new URL("https://www.sandrapavicdraskovic.com"),
   title: {default:"Sandra Drašković | Prehrana, savjetovanje i edukacija",template:"%s | Sandra Drašković"},
   description: "Individualne konzultacije, predavanja, radionice i edukativni sadržaji Sandre Drašković.",
   openGraph:{type:"website",locale:"hr_HR",siteName:"Sandra Drašković · Natura Sanat",title:"Sandra Drašković | Prehrana, savjetovanje i edukacija",description:"Individualne konzultacije, predavanja, radionice i edukativni sadržaji o prehrani i dodacima prehrani."},
