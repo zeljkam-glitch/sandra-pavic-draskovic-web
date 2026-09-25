@@ -1,0 +1,10 @@
+.vercel
+.env*
+!.env.example
+node_modules
+.pnpm-store
+.next
+dist
+tmp
+*.tsbuildinfo
+.DS_Store

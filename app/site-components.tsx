@@ -1,0 +1,15 @@
+const links = [
+  ["/sandra","O Sandri"],["/savjetovanje","Savjetovanje"],["/predavanja","Predavanja"],
+  ["/webshop","Vodiči"],["/znanje","Znanje"],["/kontakt","Kontakt"],
+] as const;
+
+export const ArrowLink=({href,children}:{href:string;children:React.ReactNode})=><a className="arrow-link" href={href}>{children}<span aria-hidden>→</span></a>;
+
+export function Header(){return <header className="site-header"><div className="header-inner"><a className="brand header-brand" href="/" aria-label="Sandra Drašković, početna"><img className="header-logo" src="/sandra-draskovic-logo.png" alt="Sandra Drašković" width={738} height={346} fetchPriority="high" decoding="async"/></a><nav aria-label="Glavna navigacija">{links.map(([href,label])=><a key={href} href={href}>{label}</a>)}</nav><div className="languages" aria-label="Odabir jezika"><a href="/hr" lang="hr">HR</a><span>/</span><a href="/en" lang="en">EN</a></div><details className="mobile-menu"><summary>Izbornik</summary><div>{links.map(([href,label])=><a key={href} href={href}>{label}</a>)}<a href="/hr">HR</a><a href="/en">EN</a></div></details></div></header>}
+
+export function Footer(){return <footer><div className="wrap footer-grid">
+  <div><a className="brand" href="/">Sandra Drašković</a><p>mag. pharm. · fitoaromaterapeutkinja · edukatorica</p><a className="footer-natura-mark" href="/" aria-label="Natura Sanat, početna"><img src="/natura-sanat-logo-green.png" alt="Natura Sanat" width={77} height={75} loading="lazy" decoding="async"/></a><p>Nutricionističko i fitoaromaterapijsko savjetovanje.</p><a href="https://www.instagram.com/sandrapavicdraskovic/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="https://www.facebook.com/profile.php?id=100000258590039" target="_blank" rel="noreferrer">Facebook ↗</a><a href="https://www.tiktok.com/@sandra.natura.sanat" target="_blank" rel="noreferrer">TikTok ↗</a><a href="https://hr.linkedin.com/in/sandra-pavic-draskovic-39191956" target="_blank" rel="noreferrer">LinkedIn ↗</a></div>
+  <div><strong>Usluge</strong><a href="/savjetovanje">Uvodno savjetovanje</a><a href="/individualni-rad">Mogući nastavci rada</a><a href="/predavanja">Predavanja i radionice</a><a href="/snimke-radionica">Arhiva snimki</a><a href="/webshop">Edukativni vodiči</a></div>
+  <div><strong>Znanje i sadržaj</strong><a href="/znanje">Blog i objave</a><a href="/pojmovnik">Pojmovnik</a><a href="/digitalni-alati">Digitalni alati</a><a href="/mediji">Sandra u medijima</a><a href="/preporucujem">Preporuke proizvoda</a></div>
+  <div><strong>Kontakt i pravno</strong><a href="/kontakt">Pošalji upit</a><a href="/privatnost">Privatnost</a><a href="/kolacici">Kolačići</a><a href="/uvjeti-kupnje">Uvjeti usluga</a><a href="/prigovori-i-povrati">Prigovori i povrati</a><a href="/dokumenti">Suglasnosti i priprema</a><a href="/cjenici">Cjenici (.CSV)</a><a href="/sitemap.xml">Mapa stranice</a><span className="fine">Edukativni sadržaj ne zamjenjuje liječnički pregled, dijagnozu ni propisanu terapiju.</span></div>
+</div><div className="wrap copyright">© {new Date().getFullYear()} Sandra Drašković <span>Natura Sanat</span></div></footer>}
