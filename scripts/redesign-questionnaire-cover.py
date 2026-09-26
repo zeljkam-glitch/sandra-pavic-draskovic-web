@@ -50,15 +50,15 @@ def create_cover() -> None:
 
     c.setFillColor(LIME)
     c.setFont("CoverSansBold", 9)
-    c.drawString(margin, 205, "PRIJE KONZULTACIJE")
+    c.drawString(margin, 165, "PRIJE KONZULTACIJE")
 
     c.setFillColor(WHITE)
     c.setFont("CoverSerif", 55)
-    c.drawString(margin, 145, "Upitnik.")
+    c.drawString(margin, 105, "Upitnik.")
 
     c.setFont("CoverSans", 13)
-    c.drawString(margin, 105, "Ispuni ga prije prvog susreta, da razgovor")
-    c.drawString(margin, 89, "može krenuti od tebe.")
+    c.drawString(margin, 65, "Ispuni ga prije prvog susreta, da razgovor")
+    c.drawString(margin, 49, "može krenuti od tebe.")
 
     label_x = 340
     value_x = right
@@ -67,7 +67,7 @@ def create_cover() -> None:
         ("DIJELOVI", "8"),
         ("MJERENJA", "3 dana"),
     ]
-    y = 188
+    y = 148
     for label, value in rows:
         c.setStrokeColor(LINE)
         c.setLineWidth(0.6)
