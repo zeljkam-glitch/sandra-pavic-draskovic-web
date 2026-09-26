@@ -75,6 +75,7 @@
 @media(max-width:900px){
   .problem-grid,.authority-grid,.outcomes-grid,.content-grid{grid-template-columns:1fr}
   .process-grid{grid-template-columns:1fr 1fr}
+  .process-grid li:nth-child(odd){padding-left:0}
   .process-grid li:nth-child(2){border-right:0}
   .process-grid li:nth-child(-n+2){border-bottom:1px solid var(--line)}
   .product-list article{grid-template-columns:120px 1fr}
