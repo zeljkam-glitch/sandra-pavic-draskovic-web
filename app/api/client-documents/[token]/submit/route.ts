@@ -69,8 +69,8 @@ export async function POST(request: Request, { params }: { params: Promise<{ tok
     submittedAt,
     invitationHash: createHash("sha256").update(token).digest("hex"),
     documentVersions: {
-      consentPdfSha256: "f648c3c1b15a75dc04ab8adfa8aca11191207a14b09404625316214f2cbfb6f0",
-      questionnairePdfSha256: "08e1bdc70a8b0632b470fe9d2426d290c8d57c498c1d5b96bc7ce2c47b0ec6ef",
+      consentPdfSha256: "2b84669dda7ed716884929d8c0ce3ab1486b1c3b559ecda0ebe436431c261edc",
+      questionnairePdfSha256: "a3487f42160f532cbe3446e64558bb36d76494b376f5298a997d3e23e56fca18",
     },
     answers,
     signature: { fullName: signatureName, place: signaturePlace, date: signatureDate, electronic: true },
