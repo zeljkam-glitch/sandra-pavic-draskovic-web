@@ -19,6 +19,39 @@ const faqs = [
   ["Mogu li već kupiti edukativne vodiče?", "Ponudu, sadržaj i cijene možeš pogledati na stranici Vodiči. Online kupnja bit će uključena nakon povezivanja naplate i sigurne dostave digitalnih izdanja."],
 ] as const;
 
+const testimonials = [
+  {
+    quote:"Predavanja su stručna i prepuna korisnih informacija. Posebno su mi značili odgovori, ideje za obroke i podrška tijekom radionice.",
+    name:"Jelena Franjković",
+    context:"Program Restart 7",
+  },
+  {
+    quote:"Tijekom radionice saznala sam mnogo korisnih informacija, savjeta i recepata koji su jednostavni i lako primjenjivi. Sandra je stručna i motivirajuća.",
+    name:"Ivana",
+    context:"Program Restart 7",
+  },
+  {
+    quote:"Knjižica smoothija je odlična, a kombinacije s mangom bile su mi pravo otkriće. Obje knjižice s receptima otvorila sam mnogo puta već u prvom tjednu.",
+    name:"Barbara Erdeljac",
+    context:"Edukativni vodiči",
+  },
+  {
+    quote:"Dobila sam više nego što sam očekivala: interaktivno sudjelovanje, Sandrinu podršku i stručna, razumljiva predavanja koja su odmah primjenjiva.",
+    name:"Nikolina Marinić",
+    context:"Program Restart 7",
+  },
+  {
+    quote:"Predavanja su izuzetno jasna i stručna, a osobni primjeri pomažu razumjeti gradivo. Posebno mi znači što Sandra nije isključiva, nego naglašava ravnotežu.",
+    name:"Morena Bačelić",
+    context:"Program Detox tijela",
+  },
+  {
+    quote:"Posebna vrijednost programa je Sandrin stručan, iskustven i temeljit pristup. Dobili smo detaljne upute i jasnu strukturu, a Sandra je stekla moje puno povjerenje.",
+    name:"N.",
+    context:"Program Detox tijela",
+  },
+] as const;
+
 export default function Home() {
   return <><Header/><main>
     <section className="hero">
@@ -35,6 +68,8 @@ export default function Home() {
     <section className="services"><header><p className="kicker">Usluge</p><h2>Nije svima potreban isti razgovor. Niti isti način rada.</h2></header><div className="product-list">{services.map(s=><article key={s.n}><div className="product-index"><span>{s.n}</span><small>{s.eyebrow}</small></div><div><h3>{s.title}</h3><p>{s.text}</p><p className="product-detail">{s.detail}</p></div><div className="product-action"><strong>{s.meta}</strong><ArrowLink href={s.href}>{s.cta}</ArrowLink></div></article>)}</div></section>
 
     <section className="about-band"><div className="wrap about-grid"><figure><Image src="/images/sandra/sandra-about-v1.webp" alt="Sandra Drašković stoji prekriženih ruku u svijetlom interijeru" fill sizes="(max-width: 900px) 100vw, 36vw"/></figure><div><p className="kicker">O Sandri</p><h2>Stručno znanje. Osobno razumijevanje.</h2><p>Sandra je magistra farmacije, fitoaromaterapeutkinja i edukatorica. Kroz Natura Sanat pomaže ljudima jasnije razumjeti prehranu, dodatke i navike, uz poštovanje liječničkih preporuka i granica savjetovanja.</p><p>Njezine preporuke moraju imati mjesto u stvarnom danu. Zato razgovor ne počinje savršenim planom, nego osobom, njezinim pitanjima i onime što je u ovom trenutku moguće promijeniti.</p><ArrowLink href="/sandra">Više o Sandri</ArrowLink></div></div></section>
+
+    <section className="testimonials" id="iskustva"><div className="wrap"><header><p className="kicker">Iskustva polaznica</p><h2>Kako je izgledalo učiti i uvoditi promjene uz Sandrinu podršku.</h2><p>Iskustva polaznica Sandrinih programa i korisnica edukativnih vodiča.</p></header><div className="testimonial-grid">{testimonials.map(testimonial=><figure className="testimonial-card" key={`${testimonial.name}-${testimonial.context}`}><blockquote>“{testimonial.quote}”</blockquote><figcaption><strong>{testimonial.name}</strong><span>{testimonial.context}</span></figcaption></figure>)}</div><p className="testimonial-note">Izjave su jezično uređene i skraćene radi čitljivosti, bez mijenjanja smisla.</p></div></section>
 
     <section className="faq wrap"><p className="kicker">Prije nego pošalješ upit</p><h2>Pitanja koja je dobro razjasniti odmah.</h2><div className="faq-list">{faqs.map(([question, answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></section>
 
