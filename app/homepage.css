@@ -166,11 +166,12 @@
 .trust-strip p:last-child>span{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#596159}
 .trust-strip a{min-height:44px;display:inline-flex;align-items:center;border-bottom:1px solid transparent}
 .trust-strip a:hover{border-color:currentColor}
-.audience-section{background:var(--acid)}
+.audience-section{background:var(--paper)}
 .audience{padding-block:110px;display:grid;grid-template-columns:1fr 1fr;gap:10%}
 .audience h2{font:400 clamp(45px,5vw,74px)/.98 var(--serif);letter-spacing:-.04em;margin-bottom:0}
 .audience>div:last-child{font-size:18px;line-height:1.75}
-.audience .notice{margin-top:28px;background:rgba(255,255,255,.72);border-left-color:var(--green)}
+.audience .kicker{color:var(--green)}
+.audience .notice{margin-top:28px;background:var(--stone);border-left-color:var(--green)}
 .contact-label small,.questionnaire-label small,.guide-price-label,.hero-facts small{font-size:13px!important}
 @media(max-width:900px){.trust-strip-inner{align-items:flex-start;flex-direction:column;padding-block:24px;gap:6px}.audience{grid-template-columns:1fr;gap:36px;padding-block:85px}}
 @media(max-width:600px){.hero h1,.sandra-hero h1,.page-hero h1{font-size:48px;line-height:.96}.audience h2{font-size:42px;line-height:1.05}.trust-strip p{gap:6px 12px}.trust-strip p:first-child span:not(:first-child):before,.trust-strip p:last-child a:before{margin-right:12px}}
