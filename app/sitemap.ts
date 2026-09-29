@@ -1,7 +1,7 @@
 import type {MetadataRoute} from "next";
 
-const baseUrl = "https://www.sandrapavicdraskovic.com";
-const routes = ["", "/sandra", "/savjetovanje", "/individualni-rad", "/predavanja", "/snimke-radionica", "/webshop", "/iskustva", "/digitalni-alati", "/pojmovnik", "/znanje", "/preporucujem", "/mediji", "/kontakt", "/privatnost", "/kolacici", "/uvjeti-kupnje", "/prigovori-i-povrati", "/dokumenti", "/cjenici"];
+const baseUrl = "https://naturasanat.hr";
+const routes = ["", "/sandra", "/savjetovanje", "/individualni-rad", ...["individualni-plan-prehrane","fitoaromaterapija-i-suplementacija","podrska-tijelu-i-redukcija-stresa","sirova-prehrana","detox-tijela","put-zdravlja"].map(slug=>`/individualni-rad/${slug}`), "/predavanja", "/snimke-radionica", "/webshop", "/iskustva", "/digitalni-alati", "/pojmovnik", "/znanje", "/preporucujem", "/mediji", "/kontakt", "/privatnost", "/kolacici", "/uvjeti-kupnje", "/prigovori-i-povrati", "/dokumenti", "/cjenici"];
 
 export default function sitemap():MetadataRoute.Sitemap {
   return routes.map((route,index)=>({

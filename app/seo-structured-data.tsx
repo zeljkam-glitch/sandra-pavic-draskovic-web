@@ -3,11 +3,11 @@ const data = {
   "@graph":[
     {
       "@type":"Person",
-      "@id":"https://www.sandrapavicdraskovic.com/#sandra",
+      "@id":"https://naturasanat.hr/#sandra",
       name:"Sandra Pavić Drašković",
       alternateName:"Sandra Drašković",
       jobTitle:"magistra farmacije, fitoaromaterapeutkinja i edukatorica",
-      url:"https://www.sandrapavicdraskovic.com/sandra",
+      url:"https://naturasanat.hr/sandra",
       sameAs:[
         "https://www.instagram.com/sandrapavicdraskovic/",
         "https://www.facebook.com/profile.php?id=100000258590039",
@@ -17,21 +17,21 @@ const data = {
     },
     {
       "@type":"ProfessionalService",
-      "@id":"https://www.sandrapavicdraskovic.com/#business",
+      "@id":"https://naturasanat.hr/#business",
       name:"Natura Sanat",
-      url:"https://www.sandrapavicdraskovic.com/",
-      founder:{"@id":"https://www.sandrapavicdraskovic.com/#sandra"},
+      url:"https://naturasanat.hr/",
+      founder:{"@id":"https://naturasanat.hr/#sandra"},
       address:{"@type":"PostalAddress",streetAddress:"Zelenjak 38",postalCode:"10000",addressLocality:"Zagreb",addressCountry:"HR"},
       areaServed:"HR",
       knowsAbout:["prehrana","dodaci prehrani","fitoaromaterapija","biljna prehrana","edukativne radionice"],
     },
     {
       "@type":"WebSite",
-      "@id":"https://www.sandrapavicdraskovic.com/#website",
-      name:"Sandra Drašković · Natura Sanat",
-      url:"https://www.sandrapavicdraskovic.com/",
+      "@id":"https://naturasanat.hr/#website",
+      name:"Natura Sanat",
+      url:"https://naturasanat.hr/",
       inLanguage:"hr-HR",
-      publisher:{"@id":"https://www.sandrapavicdraskovic.com/#business"},
+      publisher:{"@id":"https://naturasanat.hr/#business"},
     },
   ],
 };

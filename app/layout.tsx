@@ -5,10 +5,10 @@ import {CookieConsent} from "./cookie-consent";
 import {SeoStructuredData} from "./seo-structured-data";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.sandrapavicdraskovic.com"),
-  title: {default:"Sandra Drašković | Prehrana, savjetovanje i edukacija",template:"%s | Sandra Drašković"},
+  metadataBase: new URL("https://naturasanat.hr"),
+  title: {default:"Natura Sanat | Sandra Pavić Drašković",template:"%s | Natura Sanat"},
   description: "Individualne konzultacije, predavanja, radionice i edukativni sadržaji Sandre Drašković.",
-  openGraph:{type:"website",locale:"hr_HR",siteName:"Sandra Drašković · Natura Sanat",title:"Sandra Drašković | Prehrana, savjetovanje i edukacija",description:"Individualne konzultacije, predavanja, radionice i edukativni sadržaji o prehrani i dodacima prehrani."},
+  openGraph:{type:"website",locale:"hr_HR",siteName:"Natura Sanat",title:"Natura Sanat | Sandra Pavić Drašković",description:"Individualno savjetovanje, programi, radionice i edukativni vodiči o prehrani i zdravim životnim navikama."},
   twitter:{card:"summary_large_image",title:"Sandra Drašković | Natura Sanat",description:"Savjetovanje, radionice i edukativni sadržaji o prehrani."},
   robots: { index: false, follow: false },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
