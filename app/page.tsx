@@ -13,7 +13,7 @@ const audiences=[
 ];
 
 const guides=[
-  {image:"/images/sandra/sandra-booklet-cover-v1.webp",title:"Smoothie, sokovi i sirove juhe",meta:"Praktični vodič · 27 recepata"},
+  {image:"/images/kuharica/smoothie-sokovi-sirove-juhe-cover-v1.png",title:"Smoothie, sokovi i sirove juhe",meta:"Praktični vodič · 27 recepata"},
   {image:"/images/kuharica/moja-antikancerogena-bezglutenska-biljna-prehrana-cover.jpg",title:"Moja antikancerogena, bezglutenska biljna prehrana",meta:"Praktični kulinarski vodič · 50 recepata"},
   {image:"/images/kuharica/knjizica-blagdanskih-recepata-cover.jpg",title:"Biljna inspiracija za blagdanski stol",meta:"25 recepata"},
 ];
