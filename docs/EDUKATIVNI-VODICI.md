@@ -4,10 +4,10 @@ Izvor: Sandrin odgovor dostavljen 17. rujna 2026. Cijene i opisi potječu od aut
 
 - Moja antikancerogena, bezglutenska biljna prehrana: vodič + 50 recepata, 49 €.
 - Smoothie, sokovi i sirove juhe: vodič + 27 recepata, 39 €.
-- Knjižica blagdanskih recepata: 25 recepata, 29 €.
-- Kompletna kolekcija: 3 izdanja, 102 recepta, 99 €, ukupno pojedinačno 117 €, ušteda 18 €.
+- Biljna inspiracija za blagdanski stol: 25 recepata, 34 €.
+- Sandrina kompletna kolekcija: 3 izdanja, 102 recepta, 100 €, ukupno pojedinačno 122 €, ušteda 22 €.
 
-Ponuda se prikazuje zajedničkom komponentom na /webshop i /knjizice. Stari URL ostaje dostupan. Na naslovnici i u biografiji koristi se naziv edukativni vodiči s receptima. Izvorni naslov blagdanskog izdanja ostaje nepromijenjen.
+Ponuda se prikazuje zajedničkom komponentom na /webshop i /knjizice. Stari URL ostaje dostupan. Na naslovnici i u biografiji koristi se naziv Natura Sanat kolekcija vodiča i recepata.
 
 Naslovnice su radni tipografski prikazi. Opisi ističu edukaciju, pripremu i sadržaj recepata; ne predstavljaju obećanje liječenja. Naveden je izvorni naslov prve knjige uz pojašnjenje opsega.
 

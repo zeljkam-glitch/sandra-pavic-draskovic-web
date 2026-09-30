@@ -6,7 +6,7 @@ Webshop se uključuje tek kada su sadržaj, naplata, dostava i pravni tekstovi s
 
 - konačni PDF-ovi sva tri izdanja i konačne naslovnice
 - potvrda naslova, opisa, broja recepata i prava na sav sadržaj i fotografije
-- potvrda cijena: 49 €, 39 €, 29 € i kolekcija 99 €
+- potvrda cijena: 49 €, 39 €, 34 € i kolekcija 100 €
 - potvrda poreznog statusa i prikazuje li cijena sve poreze
 - poslovni račun i podaci potrebni odabranom pružatelju naplate
 - profesionalna adresa za potvrde kupnje i korisničku podršku
