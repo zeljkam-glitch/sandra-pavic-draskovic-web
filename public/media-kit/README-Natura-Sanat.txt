@@ -18,9 +18,10 @@ SADRŽAJ PAKETA
 - fotografija s predavanja
 
 04-fontovi
-- Gloock Regular za naslove
 - Manrope Variable za tekst i digitalne materijale
-- pripadajuće SIL Open Font License licence
+- pripadajuća SIL Open Font License licenca
+- napomena: P22 Mackinac Book koristi se za naslove, ali zbog
+  komercijalne licence njegova datoteka nije dio javnog paketa
 
 05-vizualni-identitet
 - kratke smjernice za tipografiju i boje
@@ -33,5 +34,6 @@ Natura Sanat. Ne mijenjajte boje ni proporcije logotipa. Fotografije
 objavite uz prethodno dogovoren potpis autora fotografije, kada je
 primjenjivo.
 
-Fontovi Gloock i Manrope distribuiraju se prema SIL Open Font License
-1.1. Licence su uključene uz datoteke fontova.
+Manrope se distribuira prema SIL Open Font License 1.1. Licenca je
+uključena uz datoteku fonta. P22 Mackinac koristi se prema zasebnoj
+komercijalnoj licenci i nije uključen u ovaj paket.

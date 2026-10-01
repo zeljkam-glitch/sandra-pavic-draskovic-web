@@ -2,7 +2,7 @@ NATURA SANAT — TIPOGRAFIJA I BOJE
 
 PRIMARNI FONT ZA NASLOVE
 
-Gloock Regular
+P22 Mackinac Book
 Koristiti za glavne naslove, naslovnice, istaknute citate i kraće
 poruke. Ne koristiti za dugačke odlomke ni vrlo sitan tekst.
 
@@ -15,7 +15,7 @@ Bold 700 za gumbe, cijene i kratke naglaske.
 
 PREPORUČENA HIJERARHIJA
 
-Naslov: Gloock Regular
+Naslov: P22 Mackinac Book
 Podnaslov: Manrope Semibold
 Tekst: Manrope Regular
 Gumbi i male oznake: Manrope Bold, po mogućnosti velikim slovima
@@ -31,7 +31,11 @@ Akcent       #DFF44D
 
 NAPOMENA O LICENCI
 
-Gloock i Manrope dostupni su prema SIL Open Font License 1.1. Fontovi
-se mogu koristiti u tisku, na webu, u prezentacijama i komercijalnim
-materijalima. Datoteke se ne smiju prodavati samostalno. Cjeloviti
-tekstovi licenci uključeni su u paket.
+P22 Mackinac je komercijalni font i smije se koristiti u skladu s
+kupljenom licencom. Zbog toga njegova instalacijska datoteka nije dio
+javnog paketa za preuzimanje.
+
+Manrope je dostupan prema SIL Open Font License 1.1 i može se koristiti
+u tisku, na webu, u prezentacijama i komercijalnim materijalima. Datoteka
+se ne smije prodavati samostalno. Cjeloviti tekst licence uključen je u
+paket.
