@@ -2,7 +2,7 @@
 
 Izvor: Sandrin odgovor dostavljen 17. rujna 2026. Cijene i opisi potječu od autorice; nisu preuzeti iz analize samih izdanja.
 
-- Moja antikancerogena, bezglutenska biljna prehrana: vodič + 50 recepata, 49 €.
+- Hrana koja budi životnu energiju i vitalnost: edukativni vodič + 50 recepata, 49 €.
 - Smoothie, sokovi i sirove juhe: vodič + 27 recepata, 39 €.
 - Biljna inspiracija za blagdanski stol: 25 recepata, 34 €.
 - Sandrina kompletna kolekcija: 3 izdanja, 102 recepta, 100 €, ukupno pojedinačno 122 €, ušteda 22 €.

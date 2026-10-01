@@ -14,9 +14,9 @@ const audiences=[
 ];
 
 const guides=[
-  {image:"/images/kuharica/smoothie-sokovi-sirove-juhe-final.jpg",title:"Smoothie, sokovi i sirove juhe",meta:"Vodič kroz svježu biljnu prehranu + 27 recepata",price:"39 €"},
-  {image:"/images/kuharica/moja-antikancerogena-bezglutenska-biljna-prehrana-final.jpg",title:"Moja antikancerogena, bezglutenska biljna prehrana",meta:"Autorski vodič kroz moj pristup biljnoj prehrani + 50 recepata",price:"49 €"},
-  {image:"/images/kuharica/biljna-inspiracija-blagdanski-stol-final.jpg",title:"Biljna inspiracija za blagdanski stol",meta:"25 recepata za zdraviju i kreativniju biljnu blagdansku trpezu",price:"34 €"},
+  {image:"/images/kuharica/hrana-zivotna-energija-vitalnost-final.jpg",title:"Hrana koja budi životnu energiju i vitalnost",meta:"Vodič kroz prehranu za energiju, zdravlje, ravnotežu i vitalnost · 50 recepata",price:"49 €"},
+  {image:"/images/kuharica/smoothie-sokovi-sirove-juhe-final-v2.jpg",title:"Smoothie, sokovi i sirove juhe",meta:"Vodič kroz svježu biljnu prehranu + 27 recepata",price:"39 €"},
+  {image:"/images/kuharica/biljna-inspiracija-blagdanski-stol-final-v2.jpg",title:"Biljna inspiracija za blagdanski stol",meta:"25 recepata za zdraviju i kreativniju biljnu blagdansku trpezu",price:"34 €"},
 ];
 
 const blogCards=[
