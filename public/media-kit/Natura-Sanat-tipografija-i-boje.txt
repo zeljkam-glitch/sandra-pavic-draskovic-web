@@ -1,0 +1,37 @@
+NATURA SANAT — TIPOGRAFIJA I BOJE
+
+PRIMARNI FONT ZA NASLOVE
+
+Gloock Regular
+Koristiti za glavne naslove, naslovnice, istaknute citate i kraće
+poruke. Ne koristiti za dugačke odlomke ni vrlo sitan tekst.
+
+PRIMARNI FONT ZA TEKST
+
+Manrope
+Regular 400 za odlomke i opise.
+Semibold 600 za međunaslove i oznake.
+Bold 700 za gumbe, cijene i kratke naglaske.
+
+PREPORUČENA HIJERARHIJA
+
+Naslov: Gloock Regular
+Podnaslov: Manrope Semibold
+Tekst: Manrope Regular
+Gumbi i male oznake: Manrope Bold, po mogućnosti velikim slovima
+
+PRIMARNE BOJE
+
+Tamnozelena  #1D4C3D
+Krem papir   #F3F1E8
+Topla bijela #FBFAF5
+Tamni tekst  #252723
+Svijetlozelena #DCE4D7
+Akcent       #DFF44D
+
+NAPOMENA O LICENCI
+
+Gloock i Manrope dostupni su prema SIL Open Font License 1.1. Fontovi
+se mogu koristiti u tisku, na webu, u prezentacijama i komercijalnim
+materijalima. Datoteke se ne smiju prodavati samostalno. Cjeloviti
+tekstovi licenci uključeni su u paket.
