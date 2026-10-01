@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./homepage.css";
 import {CookieConsent} from "./cookie-consent";
+import {NewsletterPopup} from "./newsletter-popup";
 import {SeoStructuredData} from "./seo-structured-data";
 
 export const metadata: Metadata = {
@@ -27,5 +28,5 @@ TODO_CONFIRM_LEGAL_DETAILS: obrada zdravstvenih podataka
 TODO_CONFIRM_FONT_WEB_LICENSE
 */
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="hr"><body><SeoStructuredData/>{children}<CookieConsent/></body></html>;
+  return <html lang="hr"><body><SeoStructuredData/>{children}<NewsletterPopup/><CookieConsent/></body></html>;
 }
