@@ -6,7 +6,7 @@ const links = [
 export const ArrowLink=({href,children}:{href:string;children:React.ReactNode})=><a className="arrow-link" href={href}>{children}<span aria-hidden>→</span></a>;
 
 const footerServices = [["/savjetovanje","Uvodno savjetovanje"],["/individualni-rad","Mogući nastavci rada"],["/predavanja","Predavanja i radionice"],["/snimke-radionica","Arhiva snimki"],["/webshop","Edukativni vodiči"]] as const;
-const footerKnowledge = [["/iskustva","Iskustva polaznica"],["/znanje","Blog i objave"],["/pojmovnik","Pojmovnik"],["/digitalni-alati","Digitalni alati"],["/mediji","Sandra u medijima"],["/preporucujem","Preporuke proizvoda"]] as const;
+const footerKnowledge = [["/iskustva","Iskustva polaznica"],["/znanje","Blog i objave"],["/pojmovnik","Pojmovnik"],["/digitalni-alati","Digitalni alati"],["/mediji","Sandra u medijima"],["/za-medije","Za medije i organizatore"],["/preporucujem","Preporuke proizvoda"]] as const;
 const footerLegal = [["/kontakt","Pošalji upit"],["/privatnost","Privatnost"],["/kolacici","Kolačići"],["/uvjeti-kupnje","Uvjeti usluga"],["/prigovori-i-povrati","Prigovori i povrati"],["/dokumenti","Suglasnosti i priprema"],["/cjenici","Cjenici (.CSV)"],["/sitemap.xml","Mapa stranice"]] as const;
 const footerSocials = [["https://www.instagram.com/sandrapavicdraskovic/","Instagram"],["https://www.facebook.com/profile.php?id=100000258590039","Facebook"],["https://www.tiktok.com/@sandra.natura.sanat","TikTok"],["https://hr.linkedin.com/in/sandra-pavic-draskovic-39191956","LinkedIn"]] as const;
 
