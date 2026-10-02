@@ -29,3 +29,6 @@ footer{background:#111512;color:white;padding:42px 0 20px}.footer-compact strong
 .press-index{grid-template-columns:repeat(6,1fr)}
 @media(max-width:900px){.press-index{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.press-index{grid-template-columns:1fr}}
+
+.copyright{gap:24px}.footer-credit{max-width:470px;text-align:right;color:#c5cdc7;text-decoration:none}.footer-credit:hover{color:#fff}
+@media(max-width:600px){.footer-credit{max-width:none;text-align:left}}
