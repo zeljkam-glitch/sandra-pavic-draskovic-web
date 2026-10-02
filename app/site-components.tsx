@@ -20,4 +20,4 @@ export function Footer(){return <footer><div className="wrap footer-compact">
   <div className="footer-mobile-nav"><details><summary>Usluge</summary><FooterLinks items={footerServices}/></details><details><summary>Znanje i sadržaj</summary><FooterLinks items={footerKnowledge}/></details><details><summary>Kontakt i pravno</summary><FooterLinks items={footerLegal}/></details></div>
   <nav className="footer-legal" aria-label="Kontakt i pravno"><strong>Kontakt i pravno</strong><FooterLinks items={footerLegal}/></nav>
   <p className="footer-disclaimer">Edukativni sadržaj ne zamjenjuje liječnički pregled, dijagnozu niti propisanu terapiju.</p>
-</div><div className="wrap copyright"><span>© {new Date().getFullYear()} Natura Sanat</span><span>Savjetodavne i edukativne usluge za punoljetne osobe (18+).</span></div></footer>}
+</div><div className="wrap copyright"><span>© {new Date().getFullYear()} Natura Sanat</span><span>Savjetodavne i edukativne usluge za punoljetne osobe (18+).</span><span>Web izradio SBS</span></div></footer>}
