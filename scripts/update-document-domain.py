@@ -70,7 +70,7 @@ def main() -> None:
                     "font_size": 8.35,
                     "left_padding": 38,
                     "baseline_offset": 0.8,
-                    "text": "www.sandrapavicdraskovic.com",
+                    "text": "naturasanat.hr",
                 }
             ]
         },
@@ -84,7 +84,7 @@ def main() -> None:
         "font_size": 5.15,
         "left_padding": 28,
         "baseline_offset": 0.4,
-        "text": "WWW.SANDRAPAVICDRASKOVIC.COM",
+        "text": "NATURASANAT.HR",
     }
     questionnaire_replacements = {
         page: [questionnaire_footer.copy()] for page in range(1, 5)
@@ -97,7 +97,7 @@ def main() -> None:
             "font_size": 8.8,
             "left_padding": 39,
             "baseline_offset": 0.8,
-            "text": "www.sandrapavicdraskovic.com",
+            "text": "naturasanat.hr",
         },
         questionnaire_footer.copy(),
     ]
@@ -119,7 +119,7 @@ def main() -> None:
                     "font_size": 6.9,
                     "left_padding": 31,
                     "baseline_offset": 0.65,
-                    "text": "www.sandrapavicdraskovic.com",
+                    "text": "naturasanat.hr",
                 }
             ]
         },
@@ -137,7 +137,7 @@ def main() -> None:
                     "font_size": 8.25,
                     "left_padding": 38,
                     "baseline_offset": 0.8,
-                    "text": "www.sandrapavicdraskovic.com",
+                    "text": "naturasanat.hr",
                 }
             ],
             71: [
@@ -148,7 +148,7 @@ def main() -> None:
                     "font_size": 8.8,
                     "left_padding": 40,
                     "baseline_offset": 0.85,
-                    "text": "www.sandrapavicdraskovic.com",
+                    "text": "naturasanat.hr",
                 }
             ],
         },
@@ -166,7 +166,7 @@ def main() -> None:
                     "font_size": 6.7,
                     "left_padding": 31,
                     "baseline_offset": 0.65,
-                    "text": "www.sandrapavicdraskovic.com",
+                    "text": "naturasanat.hr",
                 }
             ]
             for page in (0, 1)

@@ -8,10 +8,10 @@ const nextConfig: NextConfig = {
         has: [
           {
             type: "host",
-            value: "sandrapavicdraskovic.com",
+            value: "(www\\.)?sandrapavicdraskovic\\.com|www\\.naturasanat\\.hr",
           },
         ],
-        destination: "https://www.sandrapavicdraskovic.com/:path*",
+        destination: "https://naturasanat.hr/:path*",
         permanent: true,
       },
     ];
