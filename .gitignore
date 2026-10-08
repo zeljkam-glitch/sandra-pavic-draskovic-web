@@ -8,3 +8,4 @@ dist
 tmp
 *.tsbuildinfo
 .DS_Store
+private-ebooks-source/

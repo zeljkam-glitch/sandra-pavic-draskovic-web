@@ -3,8 +3,9 @@
 import {FormEvent,useEffect,useRef,useState} from "react";
 
 const DISMISSED_KEY="natura-sanat-newsletter-dismissed";
-const SUBSCRIBED_KEY="natura-sanat-newsletter-subscribed";
+const CONFIRMATION_SENT_KEY="natura-sanat-newsletter-confirmation-sent";
 const DISMISS_DAYS=14;
+const CONFIRMATION_SENT_DAYS=1;
 
 export function NewsletterPopup(){
   const [open,setOpen]=useState(false);
@@ -12,10 +13,11 @@ export function NewsletterPopup(){
   const dialogRef=useRef<HTMLDivElement>(null);
 
   useEffect(()=>{
-    const subscribed=window.localStorage.getItem(SUBSCRIBED_KEY)==="1";
+    const confirmationSentAt=Number(window.localStorage.getItem(CONFIRMATION_SENT_KEY)||0);
     const dismissedAt=Number(window.localStorage.getItem(DISMISSED_KEY)||0);
     const dismissalActive=Date.now()-dismissedAt<DISMISS_DAYS*24*60*60*1000;
-    if(subscribed||dismissalActive)return;
+    const confirmationRecentlySent=Date.now()-confirmationSentAt<CONFIRMATION_SENT_DAYS*24*60*60*1000;
+    if(confirmationRecentlySent||dismissalActive)return;
     const timer=window.setTimeout(()=>setOpen(true),12000);
     return()=>window.clearTimeout(timer);
   },[]);
@@ -49,7 +51,7 @@ export function NewsletterPopup(){
     try{
       const response=await fetch("/api/newsletter",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:form.get("name"),email:form.get("email"),consent:form.get("consent")==="on",website:form.get("website")})});
       if(!response.ok)throw new Error();
-      window.localStorage.setItem(SUBSCRIBED_KEY,"1");
+      window.localStorage.setItem(CONFIRMATION_SENT_KEY,String(Date.now()));
       setStatus("success");
     }catch{setStatus("error");}
   }
@@ -61,7 +63,7 @@ export function NewsletterPopup(){
         <button className="newsletter-close" type="button" onClick={close} aria-label="Zatvori prijavu">×</button>
         <div className="newsletter-art" aria-hidden="true"><span>NATURA SANAT</span><strong>Više jasnoće.<br/>Manje buke.</strong><small>Prehrana · vitalnost · svakodnevne navike</small></div>
         <div className="newsletter-content">
-          {status==="success"?<div className="newsletter-success"><p className="kicker">Prijava je zaprimljena</p><h2>Dobro došli u Natura Sanat krug.</h2><p>Na navedenu adresu stizat će samo odabrani stručni sadržaji i važne novosti. Bez svakodnevnih poruka.</p><button className="button" type="button" onClick={()=>setOpen(false)}>Zatvori</button></div>:<>
+          {status==="success"?<div className="newsletter-success"><p className="kicker">Provjerite svoju e-poštu</p><h2>Još trebate potvrditi prijavu.</h2><p>Poslali smo vam poveznicu za potvrdu. Tek nakon potvrde vaša će adresa biti dodana na newsletter listu. Ako poruke nema, provjerite neželjenu poštu.</p><button className="button" type="button" onClick={()=>setOpen(false)}>Zatvori</button></div>:<>
             <p className="kicker">Povremeno, promišljeno i korisno</p>
             <h2 id="newsletter-title">Znanje koje ima mjesto u stvarnom životu.</h2>
             <p>Primajte Sandrine tekstove, recepte i prve informacije o novim programima, predavanjima i vodičima.</p>

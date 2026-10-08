@@ -1,19 +1,29 @@
 # Natura Sanat newsletter
 
-Newsletter se postavlja kao novi sustav od nule. Na webu se do aktivacije ne prikazuje obrazac koji samo prividno prima prijave.
+Web koristi Resend kao jedini sustav za slanje i upravljanje kontaktima. Airtable nije potreban za osnovni rad newslettera.
 
-## Potrebno prije aktivacije
+## Tok prijave
 
-- potvrditi profesionalnu adresu `info@naturasanat.hr`
-- odabrati platformu za slanje i upravljanje kontaktima
-- verificirati domenu za slanje bez mijenjanja postojećih MX zapisa
-- definirati naziv pošiljatelja i adresu za odgovore
-- pripremiti tekst privole, svrhu slanja i poveznicu na privatnost
-- uključiti potvrdu prijave putem e-maila
-- omogućiti jednostavnu odjavu u svakoj poruci
-- spremati izvor, vrijeme i verziju privole
-- uvesti postojeće kontakte samo ako postoji dokaz valjane privole
+1. Posjetitelj unosi ime (neobvezno), email i zasebno prihvaća newsletter privolu.
+2. Web šalje potvrdnu poruku s potpisanom poveznicom koja vrijedi 24 sata.
+3. Poveznica otvara Natura Sanat stranicu na kojoj posjetitelj još jednom izričito potvrđuje prijavu. Time se izbjegava automatska potvrda koju ponekad izazovu sigurnosni skeneri e-pošte.
+4. Tek nakon potvrde kontakt se dodaje u Resend i, ako je postavljen `RESEND_SEGMENT_ID`, u odabrani segment.
+5. Broadcast poruke šalju se iz Resend sučelja i moraju sadržavati Resendovu poveznicu za odjavu.
 
-## Planirani tok
+## Potrebne Vercel varijable
 
-Posjetitelj upisuje adresu i dobrovoljno potvrđuje prijavu. Sustav šalje poruku za potvrdu, a kontakt ulazi na aktivnu listu tek nakon klika. Kontaktni obrazac, kupnja i newsletter ostaju odvojene svrhe.
+- `RESEND_API_KEY` — ključ s ovlastima potrebnima za slanje i kontakte
+- `NEWSLETTER_FROM` — primjer: `Natura Sanat <potvrda@newsletter.naturasanat.hr>`
+- `NEWSLETTER_REPLY_TO` — primjer: `info@naturasanat.hr`
+- `NEWSLETTER_CONFIRMATION_SECRET` — nasumična tajna od najmanje 32 znaka
+- `RESEND_SEGMENT_ID` — ID segmenta "Natura Sanat newsletter"; nije obvezan, ali se preporučuje radi urednog ciljanja Broadcasta
+
+## Resend priprema
+
+- verificirati `newsletter.naturasanat.hr`
+- napraviti segment `Natura Sanat newsletter`
+- napraviti ograničeni API ključ i spremiti ga samo u Vercel
+- u Broadcast predlošku uključiti automatsku Resend odjavu
+- prije prvog pravog slanja provesti test s vlastitom adresom
+
+Postojeće kontakte uvesti samo ako postoji dokaz valjane privole. Kontaktni obrazac, kupnja i newsletter ostaju odvojene svrhe.
