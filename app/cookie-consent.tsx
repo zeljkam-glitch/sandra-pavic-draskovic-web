@@ -1,6 +1,6 @@
 "use client";
 
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {usePathname} from "next/navigation";
 
 type CookieChoice = {analytics:boolean;marketing:boolean;version:string;savedAt:string};
@@ -14,13 +14,32 @@ export function CookieConsent(){
   const [details,setDetails]=useState(false);
   const [analytics,setAnalytics]=useState(false);
   const [marketing,setMarketing]=useState(false);
+  const panelRef=useRef<HTMLDivElement>(null);
 
   useEffect(()=>{
     try{
       const saved=window.localStorage.getItem(storageKey);
-      if(!saved)setOpen(true);
-    }catch{setOpen(true);}
+      if(!saved){const frame=window.requestAnimationFrame(()=>setOpen(true));return()=>window.cancelAnimationFrame(frame);}
+    }catch{const frame=window.requestAnimationFrame(()=>setOpen(true));return()=>window.cancelAnimationFrame(frame);}
   },[]);
+
+  useEffect(()=>{
+    if(!open)return;
+    const previous=document.activeElement as HTMLElement|null;
+    const panel=panelRef.current;
+    const focusable=()=>Array.from(panel?.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),input:not([disabled])')||[]);
+    const frame=window.requestAnimationFrame(()=>focusable()[0]?.focus());
+    const onKey=(event:KeyboardEvent)=>{
+      if(event.key!=="Tab")return;
+      const items=focusable();
+      if(!items.length)return;
+      const first=items[0],last=items[items.length-1];
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    };
+    document.addEventListener("keydown",onKey);
+    return()=>{window.cancelAnimationFrame(frame);document.removeEventListener("keydown",onKey);previous?.focus();};
+  },[open]);
 
   function save(choice:Omit<CookieChoice,"version"|"savedAt">){
     const record:CookieChoice={...choice,version,savedAt:new Date().toISOString()};
@@ -32,7 +51,7 @@ export function CookieConsent(){
   return <>
     <button className="cookie-reopen" type="button" onClick={()=>setOpen(true)}>{english?"Cookie settings":"Postavke kolačića"}</button>
     {open&&<div className="cookie-layer" role="dialog" aria-modal="true" aria-labelledby="cookie-title">
-      <div className="cookie-panel">
+      <div className="cookie-panel" ref={panelRef}>
         <div className="cookie-copy"><p className="kicker">{english?"Your choice":"Tvoj izbor"}</p><h2 id="cookie-title">{english?"Cookies under your control.":"Kolačići pod tvojom kontrolom."}</h2><p>{english?"We currently use only the storage required for the website to work and to remember this choice. Analytics and marketing are not active without your consent.":"Trenutačno koristimo samo nužnu pohranu za rad stranice i pamćenje ovog izbora. Analitika i marketing nisu aktivni bez tvoje privole."}</p><a href="/kolacici">{english?"Cookie policy (Croatian) →":"Pročitaj Politiku kolačića →"}</a></div>
         {details&&<div className="cookie-options">
           <label><span><strong>{english?"Necessary":"Nužni"}</strong><small>{english?"Website operation and saving your choice.":"Rad stranice i spremanje izbora."}</small></span><input type="checkbox" checked disabled aria-label={english?"Necessary cookies are always enabled":"Nužni kolačići uvijek su uključeni"}/></label>

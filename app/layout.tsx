@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description: "Individualne konzultacije, predavanja, radionice i edukativni sadržaji Sandre Drašković.",
   openGraph:{type:"website",locale:"hr_HR",siteName:"Natura Sanat",title:"Natura Sanat | Sandra Pavić Drašković",description:"Individualno savjetovanje, programi, radionice i edukativni vodiči o prehrani i zdravim životnim navikama."},
   twitter:{card:"summary_large_image",title:"Sandra Drašković | Natura Sanat",description:"Savjetovanje, radionice i edukativni sadržaji o prehrani."},
+  alternates:{languages:{"hr-HR":"/","en":"/en"}},
   robots: { index: true, follow: true },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };

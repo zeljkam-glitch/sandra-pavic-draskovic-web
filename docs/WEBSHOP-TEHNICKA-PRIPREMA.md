@@ -15,6 +15,8 @@ Pripremljeno je:
 - zasebne stranice uspješne i otkazane kupnje
 - ručna obavijest prodavatelju ako je uplata stigla mimo web potvrda
 
+Jedinični testovi pokrivaju potpis i istek tokena, ograničenje Stripe domene te stabilan ključ koji sprječava dvostruko slanje iste dostavne poruke pri ponovljenom webhooku. Nisu provedeni stvarna ni testna Stripe naplata, stvarni webhook, slanje kroz Resend, dohvat iz privatnog Bloba ni Redis ograničenje preuzimanja. Zbog toga se integracija ne smije opisivati kao operativna.
+
 ## Konačne datoteke
 
 Izvorne datoteke nalaze se samo u lokalnoj, ignoriranoj mapi `private-ebooks-source/` i ne ulaze u Git niti u javnu mapu weba.

@@ -1,8 +1,10 @@
 import Image from "next/image";
+import type {Metadata} from "next";
 import { Header, Footer } from "../site-components";
 import { ContactForm } from "./contact-form";
 
 export const dynamic = "force-dynamic";
+export const metadata:Metadata={title:"Kontakt i upit za savjetovanje",description:"Pošaljite Sandri Pavić Drašković upit za individualno savjetovanje, predavanje, radionicu ili suradnju.",alternates:{canonical:"/kontakt"}};
 export default async function Page({ searchParams }: { searchParams: Promise<{ tema?: string; program?: string }> }) {
   const params = await searchParams;
   const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@naturasanat.hr";

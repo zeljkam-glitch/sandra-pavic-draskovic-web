@@ -10,11 +10,10 @@ export async function GET(_request: Request, context: {params: Promise<{token: s
 
   try {
     const product = getDownloadProduct(payload.productKey);
-    const download = await consumeDownload(payload.sessionId, payload.productKey, payload.expiresAt);
-    if (!download.allowed) return new Response("Dosegnut je najveći broj preuzimanja.", {status: 410});
-
     const blob = await get(product.blobPath, {access: "private"});
     if (!blob || blob.statusCode !== 200) return new Response("Datoteka nije pronađena.", {status: 404});
+    const download = await consumeDownload(payload.sessionId, payload.productKey, payload.expiresAt);
+    if (!download.allowed) return new Response("Dosegnut je najveći broj preuzimanja.", {status: 410});
 
     return new Response(blob.stream, {
       headers: {
