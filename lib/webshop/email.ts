@@ -7,13 +7,13 @@ function escapeHtml(value: string) {
   return value.replace(/[&<>"']/g, character => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[character]!);
 }
 
-async function sendResendEmail(payload: {to: string[]; subject: string; html: string; replyTo?: string}) {
+async function sendResendEmail(payload: {to: string[]; subject: string; html: string; idempotencyKey: string; replyTo?: string}) {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.FULFILLMENT_FROM;
   if (!apiKey || !from) throw new Error("Resend fulfillment email is not configured");
   const response = await fetch("https://api.resend.com/emails", {
     method: "POST",
-    headers: {Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json"},
+    headers: {Authorization: `Bearer ${apiKey}`, "Content-Type": "application/json", "Idempotency-Key": payload.idempotencyKey},
     body: JSON.stringify({from, to: payload.to, subject: payload.subject, html: payload.html, reply_to: payload.replyTo}),
     signal: AbortSignal.timeout(10000),
   });
@@ -27,6 +27,7 @@ export async function sendDownloadEmail(input: {email: string; sessionId: string
   await sendResendEmail({
     to: [input.email],
     replyTo,
+    idempotencyKey: `natura-delivery-${input.sessionId}`,
     subject: `Tvoja Natura Sanat e-knjiga – ${PRODUCTS[input.purchasedProduct].title}`,
     html: `<h1>Hvala na kupnji.</h1><p>Uplata je potvrđena. Tvoje sigurne poveznice za preuzimanje nalaze se ispod.</p><ul>${links}</ul><p>Poveznice vrijede do <strong>${escapeHtml(expiry)}</strong> i svaka dopušta najviše tri preuzimanja. Nemoj ih prosljeđivati drugim osobama.</p><p>Ako imaš poteškoća, odgovori na ovu poruku i navedi broj narudžbe <strong>${escapeHtml(input.sessionId)}</strong>.</p>`,
   });
@@ -38,6 +39,7 @@ export async function notifySeller(input: {sessionId: string; productKey: Produc
   const reason = input.reason ? `<p><strong>Razlog:</strong> ${escapeHtml(input.reason)}</p>` : "";
   await sendResendEmail({
     to: [recipient],
+    idempotencyKey: `natura-seller-${input.status}-${input.sessionId}`,
     subject: input.status === "delivered" ? "Natura Sanat: e-knjiga je isporučena" : "Natura Sanat: potrebna je ručna provjera narudžbe",
     html: `<h1>${input.status === "delivered" ? "Automatska isporuka dovršena" : "Potrebna je ručna provjera"}</h1><p><strong>Proizvod:</strong> ${escapeHtml(PRODUCTS[input.productKey].title)}<br><strong>Stripe narudžba:</strong> ${escapeHtml(input.sessionId)}</p>${reason}`,
   });

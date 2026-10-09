@@ -1,4 +1,7 @@
+import type {Metadata} from "next";
 import {LegalPage} from "../legal-page";
+
+export const metadata:Metadata={title:"Priprema, suglasnosti i dokumenti",description:"Kako se sigurno pripremiti za Natura Sanat savjetovanje i kada su dokumentacija i zdravstveni podaci potrebni.",alternates:{canonical:"/dokumenti"}};
 
 export default function Page(){return <LegalPage title="Priprema, suglasnosti i dokumenti" intro="Prije savjetovanja treba biti jasno što usluga uključuje, treba li uopće dokumentacija i koje podatke dijeliš. U prvi kontakt nikada ne šalji zdravstvene podatke.">
 <section><h2>Kada je medicinska dokumentacija potrebna?</h2><p>Kratak odgovor: <strong>samo za dio individualnog rada i samo kada Sandra nakon uvodnog dogovora potvrdi da je relevantna.</strong> Za grupne edukacije, snimke i digitalne vodiče nije potrebna.</p><div className="table-scroll"><table className="service-matrix"><thead><tr><th>Usluga ili korak</th><th>Dokumentacija</th><th>Što se šalje</th></tr></thead><tbody>

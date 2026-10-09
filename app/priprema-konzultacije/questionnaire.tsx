@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
+import Link from "next/link";
 import { steps } from "./questions";
 
 type DeliveryStatus = "idle" | "sending" | "sent" | "error";
@@ -58,12 +59,12 @@ export function Questionnaire({ preview, token }: { preview: boolean; token: str
   }
 
   if (status === "sent") return <main className="questionnaire-shell">
-    <div className="questionnaire-brand"><a className="brand" href="/">Sandra Drašković</a><span>Privatni dokumenti klijenta</span></div>
+    <div className="questionnaire-brand"><Link className="brand" href="/">Sandra Drašković</Link><span>Privatni dokumenti klijenta</span></div>
     <section className="questionnaire-card questionnaire-success" role="status"><p className="kicker">Predaja je dovršena</p><h1>Hvala, dokumenti su potpisani i poslani Sandri.</h1><p>Na e-mail adresu Sandre poslan je ispunjeni upitnik, potvrde privole i zapis elektroničkog potpisa s datumom predaje.</p><div className="private-downloads"><a className="button" href={`${downloadBase}/suglasnost`}>Preuzmi suglasnost u PDF-u</a><a className="arrow-link" href={`${downloadBase}/upitnik`}>Preuzmi upitnik u PDF-u</a></div></section>
   </main>;
 
   return <main className="questionnaire-shell">
-    <div className="questionnaire-brand"><a className="brand" href="/">Sandra Drašković</a><span>Privatni dokumenti klijenta</span></div>
+    <div className="questionnaire-brand"><Link className="brand" href="/">Sandra Drašković</Link><span>Privatni dokumenti klijenta</span></div>
     <div className="questionnaire-preview" role="status">{preview ? "Pregled radne verzije. Koristi samo izmišljene odgovore." : "Ova privatna poveznica namijenjena je samo osobi kojoj ju je Sandra poslala nakon kupnje."} Podaci se šalju tek nakon završnog pregleda i elektroničkog potpisa.</div>
     <section className="private-document-intro"><div><p className="kicker">PDF dokumenti</p><h1>Suglasnost i upitnik prije konzultacije</h1><p>Obrasce možeš ispuniti i potpisati online. Ako ti je lakše, preuzmi PDF, ispuni ga ručno i vrati Sandri dogovorenim sigurnim kanalom.</p></div><div className="private-downloads"><a className="button" href={`${downloadBase}/suglasnost`}>Preuzmi suglasnost u PDF-u</a><a className="arrow-link" href={`${downloadBase}/upitnik`}>Preuzmi upitnik u PDF-u</a></div></section>
     <section className="questionnaire-card"><div className="questionnaire-progress"><span>Korak {step + 1} od {total}</span><span>{review ? "Pregled, privole i potpis" : steps[step].title}</span></div><progress max={total} value={step + 1} aria-label="Napredak ispunjavanja" />

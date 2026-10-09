@@ -11,8 +11,10 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "test": "pnpm test:webshop && pnpm test:newsletter && pnpm test:forms",
     "test:webshop": "tsx --test tests/webshop/*.test.ts",
     "test:newsletter": "tsx --test tests/newsletter/*.test.ts",
+    "test:forms": "tsx --test tests/forms/*.test.ts",
     "ebooks:upload": "node scripts/upload-private-ebooks.mjs",
     "db:generate": "drizzle-kit generate",
     "invite:create": "node scripts/create-client-invite.mjs"
