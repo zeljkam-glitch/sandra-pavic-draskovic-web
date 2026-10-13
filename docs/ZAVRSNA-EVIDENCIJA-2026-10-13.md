@@ -3,6 +3,7 @@
 ## Implementirano i provjerljivo bez stvarnih transakcija
 
 - siguran CMS za ključne tekstove i slike, s nacrtom, privatnim previewom i zaključanom objavom
+- svi neprodukcijski deploymenti imaju `noindex` metapodatke i robots zabranu indeksiranja
 - autentikacija urednice, vremenski ograničena HttpOnly sesija, CSRF/origin provjera i ograničenje pokušaja prijave
 - privatna Blob pohrana CMS sadržaja i slika
 - dodatno ograničenje učestalosti za kontakt, newsletter i pokretanje checkouta
