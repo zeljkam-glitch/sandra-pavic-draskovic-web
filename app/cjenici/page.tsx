@@ -1,4 +1,7 @@
+import type {Metadata} from "next";
 import {Footer,Header} from "../site-components";
+
+export const metadata:Metadata={title:"Važeći cjenici",description:"Važeći Natura Sanat cjenici savjetovanja i digitalnih vodiča u strojno čitljivom CSV formatu.",alternates:{canonical:"/cjenici"}};
 
 const priceLists = [
   {title:"Webshop i digitalni vodiči",updated:"24. 9. 2026. u 20:59",href:"/cjenici/webshop_Zelenjak-38-Zagreb_WEB-01_001_24.09.2026_20-59.csv"},

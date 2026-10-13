@@ -1,0 +1,3 @@
+import {get} from "@vercel/blob";
+
+export async function GET(_request:Request,context:{params:Promise<{file:string}>}){const {file}=await context.params;if(!/^[0-9a-f-]{36}\.(?:jpg|jpeg|png|webp)$/i.test(file))return new Response("Not found",{status:404});try{const blob=await get(`cms/media/${file}`,{access:"private",token:process.env.BLOB_READ_WRITE_TOKEN});if(!blob||blob.statusCode!==200)return new Response("Not found",{status:404});return new Response(blob.stream,{headers:{"Content-Type":blob.blob.contentType||"application/octet-stream","Cache-Control":"public, max-age=300, stale-while-revalidate=86400","X-Content-Type-Options":"nosniff"}});}catch{return new Response("Not found",{status:404});}}

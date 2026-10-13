@@ -1,6 +1,7 @@
 import {createHash} from "node:crypto";
 import {NextResponse} from "next/server";
 import {createNewsletterConfirmationPayload, signNewsletterConfirmationToken} from "../../../lib/newsletter/confirmation-token";
+import {checkRateLimit} from "@/lib/rate-limit";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -40,6 +41,8 @@ export async function POST(request: Request) {
   const resendKey = process.env.RESEND_API_KEY;
   const from = process.env.NEWSLETTER_FROM;
   if (!resendKey || !from || !process.env.NEWSLETTER_CONFIRMATION_SECRET) return NextResponse.json({error:"Delivery unavailable"}, {status:503});
+  try { const rate = await checkRateLimit(request, "newsletter", 4, 60 * 60); if (!rate.allowed) return NextResponse.json({error:"Rate limit"},{status:429}); }
+  catch { return NextResponse.json({error:"Security service unavailable"},{status:503}); }
 
   try {
     const payload = createNewsletterConfirmationPayload(email, name);

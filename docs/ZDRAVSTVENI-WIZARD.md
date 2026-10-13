@@ -4,7 +4,9 @@ Izvor: ZDRAVSTVENI UPITNIK.docx, dostavljen 16. rujna 2026. Dokument je izvor pi
 
 ## Radna verzija
 
-Osam koraka: osnovni podaci, zdravlje, navike, dodatni kontekst, postojeća mjerenja/nalazi, tri dana prehrane, terapija/dodaci i pregled odgovora. Odgovori ostaju samo u memoriji otvorenog preglednika. Zatvaranje ili osvježavanje briše unos. Slanje i privola nisu aktivni. Nema učitavanja medicinskih priloga, pohrane u localStorage, slanja e-maila ili odgovora u zapisima aplikacije.
+Osam koraka: osnovni podaci, zdravlje, navike, dodatni kontekst, postojeća mjerenja/nalazi, tri dana prehrane, terapija/dodaci i pregled odgovora. Odgovori ostaju samo u memoriji otvorenog preglednika. Zatvaranje ili osvježavanje briše unos. Nema učitavanja medicinskih priloga ni pohrane u localStorage.
+
+Produkcijska predaja je namjerno isključena varijablom `CLIENT_DOCUMENTS_SUBMISSION_ENABLED=false`. Kod više ne dopušta slanje cijelog zdravstvenog upitnika običnim e-mailom. Aktivacija zahtijeva HTTPS webhook s autentifikacijskim tokenom i prethodno potvrđen privatni sustav pohrane i pristupa. Samo postavljanje varijable nije završna sigurnosna ili pravna provjera.
 
 Stranica nije navedena u izborniku, dokumentima, blogu ni webshopu. Radni pregled: /priprema-konzultacije/pregled, dostupan samo u Vercel preview okruženju. Na njemu koristiti isključivo izmišljene podatke. To je pregled za doradu, a ne produkcijska privatna pozivnica.
 
@@ -38,4 +40,4 @@ Stranica odbija istekle i krivotvorene pozivnice. Posjedovanje pozivnice nije po
 
 ## Provjera
 
-Provjereno izdavanje valjane pozivnice te odbijanje krivotvorene i istekle pozivnice. Referenca naplate nije čitljiva u URL-u. Preostala produkcijska provjera zahtijeva naplatu, privatnu bazu, autentifikaciju, dostavu i potvrđene dokumente.
+Kod provjerava valjanost, potpis i istek pozivnice, a referenca naplate nije čitljiva u URL-u. Produkcijska predaja ostaje blokirana. Cijeli tok nije operativan niti je integracijski testiran jer još nema privatnu bazu, provjeru identiteta, jednokratnu uporabu pozivnice, autentificiranu arhivu ni potvrđene rokove čuvanja.

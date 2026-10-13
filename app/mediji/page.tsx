@@ -1,4 +1,7 @@
+import type {Metadata} from "next";
 import {Footer,Header} from "../site-components";
+
+export const metadata:Metadata={title:"Sandra Pavić Drašković u medijima",description:"Objavljeni razgovori, predavanja i medijski prilozi o radu Sandre Pavić Drašković.",alternates:{canonical:"/mediji"}};
 
 const coverage = [
   {

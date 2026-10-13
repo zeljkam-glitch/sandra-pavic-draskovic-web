@@ -15,6 +15,7 @@ async function resendRequest(path: string, init: RequestInit, apiKey: string) {
 export async function POST(request: Request) {
   const resultUrl = new URL("/newsletter/potvrdena", request.url);
   try {
+    if (request.headers.get("origin") !== new URL(request.url).origin) throw new Error("Origin");
     const form = await request.formData();
     const token = form.get("token");
     if (typeof token !== "string" || token.length > 3000) throw new Error("Invalid token");

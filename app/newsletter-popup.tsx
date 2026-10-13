@@ -31,11 +31,21 @@ export function NewsletterPopup(){
 
   useEffect(()=>{
     if(!open)return;
-    const onKey=(event:KeyboardEvent)=>{if(event.key==="Escape")close();};
+    const previous=document.activeElement as HTMLElement|null;
+    const focusable=()=>Array.from(dialogRef.current?.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),input:not([disabled])')||[]);
+    const onKey=(event:KeyboardEvent)=>{
+      if(event.key==="Escape"){close();return;}
+      if(event.key!=="Tab")return;
+      const items=focusable();
+      if(!items.length)return;
+      const first=items[0],last=items[items.length-1];
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    };
     document.addEventListener("keydown",onKey);
     document.body.classList.add("newsletter-open");
     window.setTimeout(()=>dialogRef.current?.querySelector<HTMLInputElement>('input[name="email"]')?.focus(),50);
-    return()=>{document.removeEventListener("keydown",onKey);document.body.classList.remove("newsletter-open");};
+    return()=>{document.removeEventListener("keydown",onKey);document.body.classList.remove("newsletter-open");previous?.focus();};
   },[open]);
 
   function close(){

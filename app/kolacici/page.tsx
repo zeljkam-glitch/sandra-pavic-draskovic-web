@@ -1,4 +1,7 @@
+import type {Metadata} from "next";
 import {LegalPage} from "../legal-page";
+
+export const metadata:Metadata={title:"Politika kolačića",description:"Informacije o nužnoj lokalnoj pohrani i postavkama kolačića na webu Natura Sanat.",alternates:{canonical:"/kolacici"}};
 
 export default function Page(){return <LegalPage title="Politika kolačića" intro="Jasno objašnjenje što spremamo, zašto i kako u svakom trenutku možeš promijeniti svoj izbor.">
   <section><h2>Trenutačno stanje</h2><p>Web trenutačno ne koristi marketinške alate, Meta Pixel ni aktivnu analitiku. Za prikaz stranice i sigurnost poslužitelj može koristiti tehnički nužne tehnologije. U pregledniku se lokalno sprema tvoj izbor postavki kolačića kako se obavijest ne bi prikazivala pri svakom otvaranju stranice.</p></section>

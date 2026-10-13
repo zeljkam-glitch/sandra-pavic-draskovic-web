@@ -1,4 +1,6 @@
+import type {Metadata} from "next";
 import {Footer,Header} from "../site-components";
+export const metadata:Metadata={title:"Preporuke proizvoda",description:"Transparentno označene Natura Sanat preporuke proizvoda uz sigurnosne napomene i status partnerskih poveznica.",alternates:{canonical:"/preporucujem"}};
 const products=[
 ["Omega-3 tekući veganski Superior","https://biogena.com/hr-hr/proizvodi/omega-3-tekuci-veganski-superior-49","BIOGENA_OMEGA3_AFFILIATE_URL"],
 ["Spirulina 400 mg","https://biogena.com/hr-hr/proizvodi/spirulina-400-mg-79","BIOGENA_SPIRULINA_AFFILIATE_URL"],

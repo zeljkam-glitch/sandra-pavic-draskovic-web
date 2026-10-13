@@ -3,11 +3,10 @@
 ## Trenutačno stanje
 
 - Vercel projekt: `sandra-pavic-draskovic-web`
-- Glavna web-adresa je `naturasanat.hr`; `www.naturasanat.hr` otvara isti web.
-- `sandrapavicdraskovic.com` i `www.sandrapavicdraskovic.com` trajno se preusmjeravaju na `naturasanat.hr` uz očuvanje putanje.
+- Sve četiri adrese (`naturasanat.hr`, `www.naturasanat.hr`, `sandrapavicdraskovic.com` i `www.sandrapavicdraskovic.com`) verificirane su i pridružene Vercel projektu.
+- Vercel 13. listopada 2026. ne prikazuje postavljeno preusmjeravanje ni za jednu od četiri projektne domene. Tvrdnja da se `.com` varijante već trajno preusmjeravaju zato nije potvrđena.
 - DNS još koristi MyDataKnox nameservere: `ns1.mydataknox.com` i `ns2.mydataknox.com`.
-- Stari A zapis vodi na `185.62.75.97`, a postojeći web vraća HTTP 503.
-- Nova verzija nije preuzela javni promet. Objavljena je samo kao Vercel preview.
+- Produkcijski deployment grane `main` i preview sigurnosne grane su spremni, ali Vercel SSO zaštita i dalje vrijedi za sve deploymente. Zaštitu ne uklanjati prije Sandrina odobrenja.
 
 ## Domene i DNS
 
@@ -29,6 +28,6 @@ Vercel kao alternativu prihvaća generički A zapis `76.76.21.21` i CNAME `cname
 - pričekati DNS propagaciju
 - ponovno pokrenuti Vercel provjeru obje domene
 - provjeriti HTTPS certifikat za vršnu i `www` domenu
-- potvrditi da je `naturasanat.hr` primarna domena, a ostale tri varijante preusmjeravaju na nju
+- postaviti `naturasanat.hr` kao primarnu domenu, a ostale tri varijante trajno preusmjeriti na nju uz očuvanje putanje; to je promjena javnog usmjeravanja i provodi se tek uz konačno odobrenje
 - provjeriti da e-mail i dalje radi
 - tek nakon sadržajne i pravne potvrde ukloniti zabranu indeksiranja
