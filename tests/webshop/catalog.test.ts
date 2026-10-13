@@ -1,17 +1,17 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import {getCheckoutUrl} from "../../lib/webshop/catalog";
+import {getStripePriceId} from "../../lib/webshop/catalog";
 
-test("checkout accepts only Stripe HTTPS payment links", () => {
-  const key = "NEXT_PUBLIC_CHECKOUT_BILJNA_PREHRANA";
+test("checkout accepts only Stripe price identifiers", () => {
+  const key = "STRIPE_PRICE_BILJNA_PREHRANA";
   const previous = process.env[key];
   try {
-    process.env[key] = "https://buy.stripe.com/test_123";
-    assert.equal(getCheckoutUrl("biljna-prehrana")?.href, "https://buy.stripe.com/test_123");
-    process.env[key] = "http://buy.stripe.com/test_123";
-    assert.equal(getCheckoutUrl("biljna-prehrana"), null);
-    process.env[key] = "https://buy.stripe.com.example.test/test_123";
-    assert.equal(getCheckoutUrl("biljna-prehrana"), null);
+    process.env[key] = "price_123abcABC";
+    assert.equal(getStripePriceId("biljna-prehrana"), "price_123abcABC");
+    process.env[key] = "plink_123";
+    assert.equal(getStripePriceId("biljna-prehrana"), null);
+    process.env[key] = "price_123?unexpected=true";
+    assert.equal(getStripePriceId("biljna-prehrana"), null);
   } finally {
     if (previous === undefined) delete process.env[key]; else process.env[key] = previous;
   }

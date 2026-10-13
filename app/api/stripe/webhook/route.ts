@@ -28,6 +28,7 @@ async function processPaidSession(session: Stripe.Checkout.Session, eventId: str
   const consent = await getConsent(consentId);
   if (!consent || !PRODUCTS[consent.productKey]) throw new Error("Consent record is missing or expired");
   const purchasedProduct: ProductKey = consent.productKey;
+  if (session.metadata?.productKey && session.metadata.productKey !== purchasedProduct) throw new Error("Stripe product metadata does not match consent");
   const expected = PRODUCTS[purchasedProduct];
   if (session.currency !== "eur" || session.amount_total !== expected.priceCents) throw new Error("Paid amount does not match the selected product");
 

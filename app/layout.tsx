@@ -4,6 +4,9 @@ import "./homepage.css";
 import {CookieConsent} from "./cookie-consent";
 import {NewsletterPopup} from "./newsletter-popup";
 import {SeoStructuredData} from "./seo-structured-data";
+import {CmsPreviewBanner} from "./cms-preview-banner";
+
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://naturasanat.hr"),
@@ -29,5 +32,5 @@ TODO_CONFIRM_LEGAL_DETAILS: obrada zdravstvenih podataka
 TODO_CONFIRM_FONT_WEB_LICENSE
 */
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="hr"><body><SeoStructuredData/>{children}<NewsletterPopup/><CookieConsent/></body></html>;
+  return <html lang="hr"><body><SeoStructuredData/><CmsPreviewBanner/>{children}<NewsletterPopup/><CookieConsent/></body></html>;
 }

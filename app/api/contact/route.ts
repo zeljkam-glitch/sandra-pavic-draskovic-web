@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import {checkRateLimit} from "@/lib/rate-limit";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -30,6 +31,8 @@ export async function POST(request: Request) {
   const from = process.env.CONTACT_FROM;
   const recipient = process.env.CONTACT_RECIPIENT;
   if (!endpoint && !(resendKey && from && recipient && emailPattern.test(recipient))) return NextResponse.json({ error: "Delivery unavailable" }, { status: 503 });
+  try { const rate = await checkRateLimit(request, "contact", 5, 60 * 60); if (!rate.allowed) return NextResponse.json({error:"Rate limit"},{status:429}); }
+  catch { return NextResponse.json({error:"Security service unavailable"},{status:503}); }
   try {
     let response: Response;
     if (endpoint) {
